@@ -11,7 +11,21 @@
     scroll-behavior: smooth;
     scroll-padding-top: 2rem;
 }
+:root{
+  --main-color:#129eb0;
+  --second-color:#ebeff2;
+  --text-color:#02171d;
+  --bg-color:#fff;
 
+  /* Box Shadow */
+  --box-shadow:2px 2px 10px 4px rgb(14 55 54 / 15%);
+}
+/* custom scroll bar */
+
+html::-webkit-scrollbar{
+  width:0.5rem;
+
+}
 .swiper-container {
     width: 80%;
     overflow: hidden;
@@ -34,29 +48,36 @@
 .swiper-pagination-bullet {
     background-color: #007bff;
 }
+/* heading each part */
+.heading {
+  text-align: center;
+  margin-top: 40px;
+}
+.heading h1{
+  font-size:1.7rem;
+  font-weight: 600;
+  margin-top: 20px;
+  text-transform: capitalize;
+  color: var(--text-color);
+}
 
-  .heading {
-    text-align: center; /* Căn giữa tiêu đề */
-    margin-top: 40px;   /* Tạo khoảng cách giữa heading và div phía trên */
-  }
-  
-  .heading h1 {
-    font-size: 36px;   /* Kích thước font chữ của "New Arrival" */
-    font-weight: bold; /* Tăng độ đậm của chữ */
-  }
-  
-  .heading span {
-    color: #ff6347;    /* Màu chữ của từ "Arrival" */
-  }
-
+.heading span{
+  padding: 0.2rem 1.2rem;
+  background: var(--main-color);
+  color: var(--bg-color);
+  font-weight: 500;
+  display: inline-block;
+  text-transform: uppercase;
+  clip-path: polygon(100% 0,93% 50%,86% 99%,0% 100%,7% 47%,13% 0%);
+}
 /* Điều chỉnh kích thước ảnh để vừa với div */
 .boximg {
     position: relative;
     overflow: hidden;
-    width: 100%; /* Đặt chiều rộng 100% cho div */
-    height: 300px; /* Đặt chiều cao cố định cho div */
+    width: 100%;
+    height: 300px;
     border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.1); /* Màu nền ban đầu với độ trong suốt */
+    background-color: rgba(0, 0, 0, 0.1); 
     transition: background-color 0.3s ease; /* Hiệu ứng khi hover */
   }
   
@@ -73,66 +94,28 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 43, 128, 0.7); /* Màu xanh lá cây với độ trong suốt 50% */
-    opacity: 0; /* Ẩn lớp phủ ban đầu */
-    transition: opacity 0.3s ease; /* Hiệu ứng chuyển đổi */
+    background-color: rgba(0, 43, 128, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .boximg:hover .overlay {
-    opacity: 1; /* Hiển thị lớp phủ khi hover */
+    opacity: 1;
 }
   
-  .boximg .content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  /* Khi hover vào boximg, hiện nút và thay đổi màu nền */
-  .boximg:hover {
-    background-color: rgba(0, 128, 0, 0.5); /* Màu nền xanh với độ trong suốt khi hover */
-  }
-  
-  .boximg:hover .content {
-    opacity: 1; /* Hiện nút "Buy now" khi hover */
-  }
-  
-  .btn {
-    background-color: white;
-    color: black;
-    padding: 10px 20px;
-    border: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .boximg:hover .btn {
-    background-color: black;
-    color: white;
-    border-radius: 15px;
-  }
+.boximg .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
-
-
-  .more-btn{
-    margin-top: 40%;
-    margin-left: 35%;
-    background-color: #d5dae0;
-    display: flex; 
-    width: fit-content;
-    border-radius: 15px;
-    transition: transform 1s ease;
-  }
-  .more{
-    color: rgb(4, 2, 2); 
-    font-size: 25px; 
-    padding: 10px 20px; 
-    text-align: center;
-  }
-
+/* Khi hover vào boximg, hiện nút và thay đổi màu nền */
+.boximg:hover {
+  background-color: rgba(0, 128, 0, 0.5); 
+}
   .more-btn img{
     width: 40px; /* Kích thước của icon */
     height: 40px;
@@ -140,89 +123,101 @@
     padding-right: 15px;
   }
 
-  .more-btn:hover{
-    cursor: pointer;
-    transform: scale(1.1);
-  }
-  
-              
-
-
-
-
-
-:root{
-    --main-color:#129eb0;
-    --second-color:#ebeff2;
-    --text-color:#02171d;
-    --bg-color:#fff;
-
-    /* Box Shadow */
-    --box-shadow:2px 2px 10px 4px rgb(14 55 54 / 15%);
-}
-/* custom scroll bar */
-
-html::-webkit-scrollbar{
-    width:0.5rem;
-
-}
-.home{
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: var(--second-color);
-} 
-.home.text{
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
+.boximg:hover .content {
+  opacity: 1; /* Hiện nút "Buy now" khi hover */
 }
 
-.home-img{
-    max-width: 50%;
+
+.btn {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
 }
 
-.home.img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.boximg:hover .btn {
+  background-color: black;
+  color: white;
+  border-radius: 15px;
 }
 
-.home.text span{
-    font-weight: 600;
-    text-transform: uppercase;
+
+
+.more-btn{
+  margin-top: 40%;
+  margin-left: 35%;
+  background-color: #d5dae0;
+  display: flex; 
+  width: fit-content;
+  border-radius: 15px;
+  transition: transform 1s ease;
+}
+.more{
+  color: rgb(4, 2, 2); 
+  font-size: 25px; 
+  padding: 10px 20px; 
+  text-align: center;
 }
 
-.homr-text h1{
-    font-size: 3.4rem;
-    margin-bottom: 1rem;
+.more-btn img{
+  width: 30px; 
+  height: 30px;
+  padding-top: 10px;
 }
 
-.heading{
-    text-align: center;
+.more-btn:hover{
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
-.heading h1{
-    font-size:1.7rem;
-    font-weight: 600;
-    margin-top: 20px;
-    text-transform: capitalize;
-    color: var(--text-color);
+
+
+/*reviews */
+.reviews-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px, auto));
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-.heading span{
-    padding: 0.2rem 1.2rem;
-    background: var(--main-color);
-    color: var(--bg-color);
-    font-weight: 500;
-    display: inline-block;
-    text-transform: uppercase;
-    clip-path: polygon(100% 0,93% 50%,86% 99%,0% 100%,7% 47%,13% 0%);
+.reviews-container .box{
+  padding: 20px 10px;
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow:0px  5px 10px rgb(14 55 54 / 15%);
+  border: 1px solid rgb(242, 242, 242);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
+.reviews-container .box img{
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.reviews-container .box .stars i{
+  color:yellow;
+}
+
+.reviews-container .box p{
+  font-size: 0.938rem;
+  font-style: italic;
+  margin: 0.5rem 0.5rem;
+}
+
+.reviews-container .box h2{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.reviews-container .box:hover{
+  transform: scale(1.025);
+}
+/* footer */
 .footer{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(240px, auto));
