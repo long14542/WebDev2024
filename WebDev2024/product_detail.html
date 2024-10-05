@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <style>
+        /* Navbar styling */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 100px;
+            transition: 0.5s linear;
+            background: var(--bg-color);
+            box-shadow: 0 0 4px rgb(14 55 54 / 15%);
+        }
+
+        header a {
+            width: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            font-weight: 600;
+            column-gap: 0.2rem;
+            color: var(--text-color);
+        }
+
+        .logo .bx {
+            font-size: 24px;
+            color: var(--main-color);
+        }
+
+        .navbar {
+            display: flex;
+            column-gap: 2.4rem;
+        }
+
+        .navbar a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            color: var(--main-color);
+        }
+
+        /* Responsive for mobile */
+        @media (max-width: 991px) {
+            header {
+                padding: 18px 4%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 4%;
+            }
+
+            #menu-icon {
+                display: block;
+            }
+
+            .navbar {
+                position: absolute;
+                width: 240px;
+                height: 100vh;
+                top: 100%;
+                right: -100%;
+                display: flex;
+                flex-direction: column;
+                background: var(--bg-color);
+                row-gap: 1.4rem;
+                padding: 20px;
+                box-shadow: 4px 4px 0 4px rgb(14 55 54 / 15%);
+                text-align: left;
+            }
+
+            .navbar.active {
+                right: 0;
+            }
+        }
+
+        body {
+            padding-top: 80px;
+        }
+
+        .product-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 100px 0;
+            padding: 20px;
+        }
+
+        .product-detail-left {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .product-detail-left img {
+            width: 100%;
+            transition: transform 0.3s;
+        }
+
+        .image-container:hover img {
+            transform: scaleX(-1);
+        }
+
+        .product-detail-right {
+            flex: 1;
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .product-detail-right h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .product-detail-right p {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .stars {
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 1.5em;
+            color: #E91E63;
+            margin-bottom: 20px;
+        }
+
+        .quantity {
+            margin-bottom: 20px;
+        }
+
+        .quantity label {
+            margin-right: 10px;
+        }
+
+        .btn {
+            background-color: #129eb0;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #02171d;
+        }
+
+        /* Responsive cho màn hình nhỏ hơn */
+        @media (max-width: 768px) {
+            .product-detail {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-detail-left,
+            .product-detail-right {
+                padding: 0;
+                text-align: center;
+            }
+
+            .product-detail-left img {
+                max-width: 300px;
+            }
+        }
+
+        .color-selection {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #ccc;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .color-option:hover {
+            border-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html#home"><img src="img/nike-logo.png" alt=""></a>
+        <ul class="navbar">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#new">New Arrival</a></li>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+        </ul>
+        <div class="header-icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-search' id="search-icons"></i>
+            <i class='bx bxs-cart' id="cart-icons"></i>
+            <i class='bx bx-user' id="user-icons"></i>
+        </div>
+        <div class="search-box">
+            <input type="search" name="" id="" placeholder="Search Here...">
+        </div>
+    </header>
+
+    <section class="product-detail" id="product-detail">
+        <!-- Product information will be populated by JavaScript -->
+    </section>
+
+    <section class="footer">
+        <div class="footer-box">
+            <h2>Nike</h2>
+            <p>----------------------------------------------------</p>
+            <div class="social">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-tiktok'></i></a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <h3>Support</h3>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Help & Support</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+            <li><a href="#">FAQ</a></li>
+        </div>
+
+        <div class="footer-box">
+            <h3>Branches</h3>
+            <li><a href="#">Pakistan</a></li>
+            <li><a href="#">Japan</a></li>
+            <li><a href="#">India</a></li>
+            <li><a href="#">China</a></li>
+        </div>
+
+        <div class="footer-box">
+            <h3>Newsletter</h3>
+            <p>Subscribe to our newsletter for updates on offers and sales!</p>
+            <input type="email" name="" id="" placeholder="Your Email">
+            <button class="btn">Subscribe</button>
+        </div>
+    </section>
+
+    <script>
+        const products = [
+            {
+                id: 1,
+                name: "Nike Air Force 1 Low",
+                image: "img/p1.png",
+                price: "$50.05",
+                description: "The Nike Air Force 1 Low is a timeless sneaker that blends style and comfort. Designed with high-quality materials and perfect for both casual wear and performance activities.",
+                stars: 4.5,
+                colors: ["red", "blue", "green", "yellow"]
+            },
+            {
+                id: 2,
+                name: "Nike Air Max 270",
+                image: "img/p2.png",
+                price: "$120.00",
+                description: "Experience the ultimate comfort with Nike Air Max 270.",
+                stars: 5,
+                colors: ["black", "white", "grey"]
+            },
+        ];
+
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        const productId = parseInt(getQueryParam('id'));
+        const product = products.find(p => p.id === productId);
+
+        if (product) {
+            const productDetail = document.getElementById('product-detail');
+            productDetail.innerHTML = `
+                <div class="product-detail-left">
+                    <div class="image-container">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="color-selection">
+                        ${product.colors.map(color => `<span class="color-option" style="background-color: ${color};"></span>`).join('')}
+                    </div>
+                </div>
+                <div class="product-detail-right">
+                    <h1>${product.name}</h1>
+                    <div class="stars">
+                        ${generateStars(product.stars)}
+                    </div>
+                    <span class="price">${product.price}</span>
+                    <p>${product.description}</p>
+                    <div class="quantity">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            `;
+        } else {
+            document.getElementById('product-detail').innerHTML = `<p>Product not found.</p>`;
+        }
+
+        function generateStars(rating) {
+            let starsHtml = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= Math.floor(rating)) {
+                    starsHtml += `<i class='bx bxs-star'></i>`;
+                } else if (i - rating < 1) {
+                    starsHtml += `<i class='bx bxs-star-half'></i>`;
+                } else {
+                    starsHtml += `<i class='bx bx-star'></i>`;
+                }
+            }
+            return starsHtml;
+        }
+    </script>
+</body>
+
+</html>
