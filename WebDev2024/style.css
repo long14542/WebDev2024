@@ -116,10 +116,17 @@ html::-webkit-scrollbar{
 .boximg:hover {
   background-color: rgba(0, 128, 0, 0.5); 
 }
+  .more-btn img{
+    width: 40px; /* Kích thước của icon */
+    height: 40px;
+    padding-top: 10px;
+    padding-right: 15px;
+  }
 
 .boximg:hover .content {
   opacity: 1; /* Hiện nút "Buy now" khi hover */
 }
+
 
 .btn {
   background-color: white;
