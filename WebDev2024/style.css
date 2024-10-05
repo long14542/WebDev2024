@@ -134,9 +134,10 @@
   }
 
   .more-btn img{
-    width: 30px; /* Kích thước của icon */
-    height: 30px;
+    width: 40px; /* Kích thước của icon */
+    height: 40px;
     padding-top: 10px;
+    padding-right: 15px;
   }
 
   .more-btn:hover{
