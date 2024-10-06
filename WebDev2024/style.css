@@ -70,9 +70,8 @@ html::-webkit-scrollbar{
   text-transform: uppercase;
   clip-path: polygon(100% 0,93% 50%,86% 99%,0% 100%,7% 47%,13% 0%);
 }
-img{
-  width: 100%;
-}
+
+
 /* button */
 .btn{
   width: 135px;
@@ -263,6 +262,9 @@ img{
   grid-template-columns: repeat(auto-fit,minmax(240px, auto));
   gap: 1rem;
   margin-top: 2rem;
+}
+.products img{
+  width: 100%;
 }
 
 .product-container .box{
