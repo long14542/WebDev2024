@@ -48,6 +48,10 @@ html::-webkit-scrollbar{
 .swiper-pagination-bullet {
     background-color: #007bff;
 }
+
+body {
+  margin: 100px 120px 10px 120px;
+}
 /* heading each part */
 .heading {
   text-align: center;
@@ -102,6 +106,7 @@ html::-webkit-scrollbar{
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
+    margin-right: 10px;
 }
 
 .home-img{
