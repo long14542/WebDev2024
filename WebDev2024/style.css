@@ -70,6 +70,22 @@ html::-webkit-scrollbar{
   text-transform: uppercase;
   clip-path: polygon(100% 0,93% 50%,86% 99%,0% 100%,7% 47%,13% 0%);
 }
+/* button */
+.btn{
+  width: 135px;
+  padding: 0.7rem 1.2rem;
+  background: var(--main-color);
+  color: var(--bg-color);
+  font-weight: 500;
+  display: inline-block;
+  text-transform: uppercase;
+  clip-path: polygon(100% 0,93% 50%,86% 99%,0% 100%,7% 47%,13% 0%);
+  text-align: center;
+}
+.btn:hover{
+  background-color: var(--text-color);
+  transition: 0.2s;
+}
 
 /* Home */
 
@@ -89,13 +105,13 @@ html::-webkit-scrollbar{
 }
 
 .home-img{
-    max-width: 34%;
+    max-width: 30%;
 }
 
 .home.img img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .home.text span{
@@ -155,7 +171,7 @@ html::-webkit-scrollbar{
   background-color: rgba(0, 128, 0, 0.5); 
 }
   .more-btn img{
-    width: 40px; /* Kích thước của icon */
+    width: 40px; 
     height: 40px;
     padding-top: 10px;
     padding-right: 15px;
@@ -164,24 +180,6 @@ html::-webkit-scrollbar{
 .boximg:hover .content {
   opacity: 1; /* Hiện nút "Buy now" khi hover */
 }
-
-
-.btn {
-  background-color: white;
-  color: black;
-  padding: 10px 20px;
-  border: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  cursor: pointer;
-}
-
-.boximg:hover .btn {
-  background-color: black;
-  color: white;
-  border-radius: 15px;
-}
-
-
 
 .more-btn{
   margin-top: 40%;
