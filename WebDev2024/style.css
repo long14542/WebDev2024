@@ -70,6 +70,25 @@ html::-webkit-scrollbar{
   text-transform: uppercase;
   clip-path: polygon(100% 0,93% 50%,86% 99%,0% 100%,7% 47%,13% 0%);
 }
+img{
+  width: 100%;
+}
+/* button */
+.btn{
+  width: 135px;
+  padding: 0.7rem 1.2rem;
+  background: var(--main-color);
+  color: var(--bg-color);
+  font-weight: 500;
+  display: inline-block;
+  text-transform: uppercase;
+  clip-path: polygon(100% 0,93% 50%,86% 99%,0% 100%,7% 47%,13% 0%);
+  text-align: center;
+}
+.btn:hover{
+  background-color: var(--text-color);
+  transition: 0.2s;
+}
 
 /* Home */
 
@@ -89,13 +108,13 @@ html::-webkit-scrollbar{
 }
 
 .home-img{
-    max-width: 34%;
+    max-width: 30%;
 }
 
 .home.img img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .home.text span{
@@ -155,7 +174,7 @@ html::-webkit-scrollbar{
   background-color: rgba(0, 128, 0, 0.5); 
 }
   .more-btn img{
-    width: 40px; /* Kích thước của icon */
+    width: 40px; 
     height: 40px;
     padding-top: 10px;
     padding-right: 15px;
@@ -164,24 +183,6 @@ html::-webkit-scrollbar{
 .boximg:hover .content {
   opacity: 1; /* Hiện nút "Buy now" khi hover */
 }
-
-
-.btn {
-  background-color: white;
-  color: black;
-  padding: 10px 20px;
-  border: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  cursor: pointer;
-}
-
-.boximg:hover .btn {
-  background-color: black;
-  color: white;
-  border-radius: 15px;
-}
-
-
 
 .more-btn{
   margin-top: 40%;
@@ -210,51 +211,7 @@ html::-webkit-scrollbar{
   transform: scale(1.1);
 }
 
-/*our product*/
-.product-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(240px, auto));
-    gap: 1rem;
-    margin-top: 2rem;
-}
 
-.product-container .box{
-    position: relative;
-    padding: 10px;
-    box-shadow: var(--box-shadow);
-}
-.product-container .box .img {
-	max-width:100%;
-	max- height: 100%;
-}
-
-.product-container .box .content .h2{
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.product-container .box .content .stars i{
-    color: yellow;
-}
-.product-container .box .bx-cart-alt{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 10px;
-    font-size: 24px;
-    background: var(--main-color);
-    color: var(--bg-color);
-}
-
-.product-container .box .bx-cart-alt:hover{
-    background: var(--text-color);
-}
-
-.product-container .box:hover img{
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    transition: 0.3s;
-}
 
 /*reviews */
 .reviews-container{
@@ -299,6 +256,50 @@ html::-webkit-scrollbar{
 .reviews-container .box:hover{
   transform: scale(1.025);
 }
+
+/*product*/
+.product-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px, auto));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.product-container .box{
+  position: relative;
+  padding: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.product-container .box .content .h2{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.product-container .box .content .stars i{
+  color: yellow;
+}
+
+.product-container .box .bx-cart-alt{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  font-size: 24px;
+  background: var(--main-color);
+  color: var(--bg-color);
+}
+
+.product-container .box .bx-cart-alt:hover{
+  background: var(--text-color);
+}
+
+.product-container .box:hover img{
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  transition: 0.3s;
+}
+
 /* footer */
 .footer{
     display: grid;
