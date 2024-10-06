@@ -47,6 +47,21 @@ var swiper = new Swiper('.swiper-container', {
         },
     },
 });
+// Swiper for Reviews
+var swiperReviews = new Swiper(".reviews-container", {
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    slidesPerView: 3, 
+    spaceBetween: 20, 
+    
+});
 
   
 
