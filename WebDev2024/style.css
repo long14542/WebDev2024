@@ -26,28 +26,7 @@ html::-webkit-scrollbar{
   width:0.5rem;
 
 }
-.swiper-container {
-    width: 80%;
-    overflow: hidden;
-    margin: 0 auto;
-}
 
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto; 
-}
-
-/* Các nút điều hướng của Swiper */
-.swiper-button-next,
-.swiper-button-prev {
-    color: #007bff;
-}
-
-.swiper-pagination-bullet {
-    background-color: #007bff;
-}
 /* heading each part */
 .heading {
   text-align: center;
@@ -109,39 +88,72 @@ html::-webkit-scrollbar{
 }
 
 /* New arive */
-.boximg {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 300px;
-    border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.1); 
-    transition: background-color 0.3s ease; /* Hiệu ứng khi hover */
-  }
-  
-  .boximg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    border-radius: 15px;
-  }
 
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 43, 128, 0.7);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.box-arrival {
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.3s ease;
 }
 
-.boximg:hover .overlay {
-    opacity: 1;
+.box-arrival img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 15px;
 }
+
+.allswipper {
+  position: relative; 
+  width: 100%; 
+  height: 550px;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.swipwrapp {
+  position: absolute;
+  width: 80%;
+}
+
+.button-next,
+.button-prev {
+  position: absolute;
+}
+
+.button-next {
+  right: 10px; 
+}
+
+.button-prev {
+  left: 10px; 
+}
+
+.pagination {
+  position: absolute;
+  width: 100%;
+  text-align: center;
   
-.boximg .content {
+}
+
+.overlayarrival {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(209, 217, 232, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.box-arrival:hover .overlay {
+  opacity: 1;
+}
+
+.box-arrival .content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -150,23 +162,11 @@ html::-webkit-scrollbar{
   transition: opacity 0.3s ease;
 }
 
-/* Khi hover vào boximg, hiện nút và thay đổi màu nền */
-.boximg:hover {
-  background-color: rgba(0, 128, 0, 0.5); 
-}
-  .more-btn img{
-    width: 40px; /* Kích thước của icon */
-    height: 40px;
-    padding-top: 10px;
-    padding-right: 15px;
-  }
-
-.boximg:hover .content {
-  opacity: 1; /* Hiện nút "Buy now" khi hover */
+.box-arrival:hover .content {
+  opacity: 1;
 }
 
-
-.btn {
+.btn-arrival {
   background-color: white;
   color: black;
   padding: 10px 20px;
@@ -175,37 +175,36 @@ html::-webkit-scrollbar{
   cursor: pointer;
 }
 
-.boximg:hover .btn {
-  background-color: black;
+.box-arrival:hover .btn-arrival {
+  background-color: rgb(101, 190, 214);
   color: white;
   border-radius: 15px;
 }
 
-
-
-.more-btn{
+.more-btn {
   margin-top: 40%;
   margin-left: 35%;
   background-color: #d5dae0;
-  display: flex; 
+  display: flex;
   width: fit-content;
   border-radius: 15px;
   transition: transform 1s ease;
 }
-.more{
+
+.more {
   color: rgb(4, 2, 2); 
   font-size: 25px; 
   padding: 10px 20px; 
   text-align: center;
 }
 
-.more-btn img{
+.more-btn img {
   width: 30px; 
   height: 30px;
   padding-top: 10px;
 }
 
-.more-btn:hover{
+.more-btn:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
