@@ -10,16 +10,14 @@
     <!-- Box Icon -->
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <script src="main.js"></script>
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
 </head>
 <body>
     <!-- Navbar -->
     <header>
-        <a href="#home"><img src="img/logo.pngđ" alt="logo"></a>
+        <a href="#home"><img src="img/logo.png" alt=""></a>
 
         <ul class="navbar">
             <li><a href="#home">Home</a></li>
@@ -27,18 +25,54 @@
             <li><a href="#products">Products</a></li>
             <li><a href="#reviews">Reviews</a></li>
         </ul>
+    <!-- Icons -->
+    <div class="header-icons">
+        <i class='bx bx-menu'  id="menu-icon"></i>
+        <i class='bx bx-search' id="search-icons"></i>
+        <i class='bx bxs-cart' id="cart-icons"></i>
+        <i class='bx bx-user'id="user-icons"></i>
+    </div>
+    <!-- search box -->
+    <div class="search-box">
+        <input type="search" name="" id="" placeholder="Search Here...">
+    </div>
 
-        <!-- Icons -->
-        <div class="header-icons">
-            <i class='bx bx-menu'  id="menu-icon"></i>
-            <i class='bx bx-search' id="search-icons"></i>
-            <i class='bx bxs-cart' id="cart-icons"></i>
-            <i class='bx bx-user'id="user-icons"></i>
+    <!-- cart box -->
+    <div class="cart">
+        <!-- box 1 -->
+        <div class="box">
+        <img src="img/img1.jpg" alt="">
+        <div class="text">
+            <h3>Nike Air Force 1 Low</h3>
+            <span>$50.05</span>
+            <span>x1</span>
         </div>
-        <!-- search box -->
-        <div class="search-box">
-            <input type="search" name="" id="" placeholder="Search Here...">
+        <i class='bx bxs-trash'></i>
         </div>
+    <!-- box 2-->
+    <div class="box">
+        <img src="img/img2.jpg" alt="">
+        <div class="text">
+            <h3>MLB Big Ball Chunky</h3>
+            <span>$50.05</span>
+            <span>x1</span>
+        </div>
+        <i class='bx bxs-trash'></i>
+        </div>
+        
+        <h2>Total   $100.01</h2>
+        <a href="#" class="btn">Checkout</a>
+    </div>
+    <!-- user -->
+    <div class="user">
+        <h2>Login Now</h2>
+        <input type="email" placeholder="Your email...">
+        <input type="password " name="" id="" placeholder="Password">
+        <input type="submit" value="Login" class="login-btn">
+        <p>Forget Password <a href="#">Resert Now</a></p>
+        <p>Don't have account <a href="formdangki.html">Create One</a></p>
+    </div>
+        </header>
     
     <!-- Home -->
     
