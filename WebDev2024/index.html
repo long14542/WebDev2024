@@ -10,19 +10,14 @@
     <!-- Box Icon -->
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <script src="main.js"></script>
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
 </head>
 <body>
     <!-- Navbar -->
     <header>
-
-
         <a href="#home"><img src="img/logo.png" alt=""></a>
-
 
         <ul class="navbar">
             <li><a href="#home">Home</a></li>
@@ -30,17 +25,39 @@
             <li><a href="#products">Products</a></li>
             <li><a href="#reviews">Reviews</a></li>
         </ul>
+    <!-- Icons -->
+    <div class="header-icons">
+        <i class='bx bx-menu'  id="menu-icon"></i>
+        <i class='bx bx-search' id="search-icons"></i>
+        <i class='bx bxs-cart' id="cart-icons"></i>
+        <i class='bx bx-user'id="user-icons"></i>
+    </div>
+    <!-- search box -->
+    <div class="search-box">
+        <input type="search" name="" id="" placeholder="Search Here...">
+    </div>
 
-        <!-- Icons -->
-        <div class="header-icons">
-            <i class='bx bx-menu'  id="menu-icon"></i>
-            <i class='bx bx-search' id="search-icons"></i>
-            <i class='bx bxs-cart' id="cart-icons"></i>
-            <i class='bx bx-user'id="user-icons"></i>
+    <!-- cart box -->
+    <div class="cart">
+        <!-- box 1 -->
+        <div class="box">
+        <img src="img/img1.jpg" alt="">
+        <div class="text">
+            <h3>Nike Air Force 1 Low</h3>
+            <span>$50.05</span>
+            <span>x1</span>
         </div>
-        <!-- search box -->
-        <div class="search-box">
-            <input type="search" name="" id="" placeholder="Search Here...">
+        <i class='bx bxs-trash'></i>
+        </div>
+    <!-- box 2-->
+    <div class="box">
+        <img src="img/img2.jpg" alt="">
+        <div class="text">
+            <h3>MLB Big Ball Chunky</h3>
+            <span>$50.05</span>
+            <span>x1</span>
+        </div>
+        <i class='bx bxs-trash'></i>
         </div>
     
     <!-- Home -->
@@ -351,7 +368,6 @@
             <h3>Contact us</h3>
             <li><a href="#">Email: group24@st.usth.edu.vn</a></li>
             <li><a href="#">Hotline: 012345678</a></li>
-            
         </div>
 
         <div class="footer-box">
@@ -369,20 +385,7 @@
         <li><a href="http://127.0.0.1:5501/WebDev2024/WebDev2024/index.html" target="_blank">&#169; 2024 USTHPICKLEBALL.VN - Created by Group 24</a></li>
     </div>
     
-    <!-- Home -->
-    
-    <section class="home" id="home">
-        <div class="home-text">
-            <span>Shop Now</span>
-            <h1>New Arrival of <br>Fresh Products</h1>
-            <a href="#" class="btn">Shop Now</a>
-        </div>
-        <div class="home-img">
-            <img src="img/home1.png" alt="nu mau anh">
-        </div>
-    </section>
 
- 
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
