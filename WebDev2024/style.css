@@ -11,6 +11,372 @@
     scroll-behavior: smooth;
     scroll-padding-top: 2rem;
 }
+:root{
+  --main-color:#129eb0;
+  --second-color:#ebeff2;
+  --text-color:#02171d;
+  --bg-color:#fff;
 
-/* some variables */
+  /* Box Shadow */
+  --box-shadow:2px 2px 10px 4px rgb(14 55 54 / 15%);
+}
+/* custom scroll bar */
 
+html::-webkit-scrollbar{
+  width:0.5rem;
+
+}
+.swiper-container {
+    width: 80%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto; 
+}
+
+/* Các nút điều hướng của Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #007bff;
+}
+
+.swiper-pagination-bullet {
+    background-color: #007bff;
+}
+
+
+body {
+  margin: 100px 120px 10px 120px;
+}
+
+/* heading each part */
+.heading {
+  text-align: center;
+  margin-top: 40px;
+}
+.heading h1{
+  font-size:1.7rem;
+  font-weight: 600;
+  margin-top: 20px;
+  text-transform: capitalize;
+  color: var(--text-color);
+}
+
+.heading span{
+  padding: 0.2rem 1.2rem;
+  background: var(--main-color);
+  color: var(--bg-color);
+  font-weight: 500;
+  display: inline-block;
+  text-transform: uppercase;
+  clip-path: polygon(100% 0,93% 50%,86% 99%,0% 100%,7% 47%,13% 0%);
+}
+
+/* button */
+.btn{
+  width: 135px;
+  padding: 0.7rem 1.2rem;
+  background: var(--main-color);
+  color: var(--bg-color);
+  font-weight: 500;
+  display: inline-block;
+  text-transform: uppercase;
+  clip-path: polygon(100% 0,93% 50%,86% 99%,0% 100%,7% 47%,13% 0%);
+  text-align: center;
+}
+.btn:hover{
+  background-color: var(--text-color);
+  transition: 0.2s;
+}
+
+/* Home */
+
+.home{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--second-color);
+} 
+.home.text{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 10px;
+
+}
+
+.home-img{
+    max-width: 30%;
+}
+
+.home.img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.home.text span{
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.home-text h1{
+    font-size: 3.4rem;
+    margin-bottom: 1rem;
+}
+
+/* New arive */
+.boximg {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease; /* Hiệu ứng khi hover */
+  }
+  
+  .boximg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 15px;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 43, 128, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.boximg:hover .overlay {
+    opacity: 1;
+}
+  
+.boximg .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Khi hover vào boximg, hiện nút và thay đổi màu nền */
+.boximg:hover {
+  background-color: rgba(0, 128, 0, 0.5); 
+}
+  .more-btn img{
+    width: 40px; 
+    height: 40px;
+    padding-top: 10px;
+    padding-right: 15px;
+  }
+
+.boximg:hover .content {
+  opacity: 1; /* Hiện nút "Buy now" khi hover */
+}
+
+.more-btn{
+  margin-top: 40%;
+  margin-left: 35%;
+  background-color: #d5dae0;
+  display: flex; 
+  width: fit-content;
+  border-radius: 15px;
+  transition: transform 1s ease;
+}
+.more{
+  color: rgb(4, 2, 2); 
+  font-size: 25px; 
+  padding: 10px 20px; 
+  text-align: center;
+}
+
+.more-btn img{
+  width: 30px; 
+  height: 30px;
+  padding-top: 10px;
+}
+
+.more-btn:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+
+
+/*reviews */
+.reviews-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px, auto));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.reviews-container .box{
+  padding: 20px 10px;
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow:0px  5px 10px rgb(14 55 54 / 15%);
+  border: 1px solid rgb(242, 242, 242);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.reviews-container .box img{
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.reviews-container .box .stars i{
+  color:yellow;
+}
+
+.reviews-container .box p{
+  font-size: 0.938rem;
+  font-style: italic;
+  margin: 0.5rem 0.5rem;
+}
+
+.reviews-container .box h2{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.reviews-container .box:hover{
+  transform: scale(1.025);
+}
+
+/*product*/
+.product-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px, auto));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.products img{
+  width: 100%;
+}
+
+.product-container .box{
+  position: relative;
+  padding: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.product-container .box .content .h2{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.product-container .box .content .stars i{
+  color: yellow;
+}
+
+.product-container .box .bx-cart-alt{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  font-size: 24px;
+  background: var(--main-color);
+  color: var(--bg-color);
+}
+
+.product-container .box .bx-cart-alt:hover{
+  background: var(--text-color);
+}
+
+.product-container .box:hover img{
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  transition: 0.3s;
+}
+
+/* footer */
+.footer{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px, auto));
+  gap: 1rem;
+  color: var(--text-color);
+}
+
+.footer-box .h2{
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.footer-box p{
+  font-size: 0.938rem;
+  margin-bottom: 10px;
+}
+
+.social{
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.social a .bx{
+  font-size: 24px;
+  color: var(--text-color);
+  padding: 10px;
+  background: var(--second-color);
+  border-radius: 0.5rem;
+}
+
+.social a .bx:hover{
+  background: var(--main-color);
+  color: var(--bg-color);
+}
+
+.footer-box h3{
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.footer-box li a{
+  color: var(--text-color);
+}
+
+.footer-box li a:hover{
+  color: var(--main-color);
+}
+
+.payment{
+  display: flex;
+  align-items: center;
+  column-gap: 00.5rem;
+}
+
+.payment img{
+  width: 44px;
+}
+
+.payment img:hover{
+  transform: scale(1.025);
+
+}
+
+.copyright{
+  padding: 20px;
+  text-align: center;
+  color: var(--text-color);
+}
