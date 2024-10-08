@@ -339,15 +339,21 @@ body {
 .btn-home {
   background-color: rgb(101, 190, 214);
   color: white;
-  width: 100px;
-  height: 50px;
+  padding: 10px 20px;
   border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.btn-home:hover{
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 
 /* New arive */
 
 .swiper-container {
+  margin-top: 30px;
   position: relative; 
   height: 500px; 
 }
@@ -461,7 +467,7 @@ body {
   background-color: #d5dae0;
   display: flex;
   top: 50%;
-  left: 40%;
+  left: 20%;
   border-radius: 15px;
   transition: transform 1s ease;
 }
