@@ -298,23 +298,6 @@ body {
   clip-path: polygon(100% 0,93% 50%,86% 99%,0% 100%,7% 47%,13% 0%);
 }
 
-/* button */
-.btn{
-  width: 135px;
-  padding: 0.7rem 1.2rem;
-  background: var(--main-color);
-  color: var(--bg-color);
-  font-weight: 500;
-  display: inline-block;
-  text-transform: uppercase;
-  clip-path: polygon(100% 0,93% 50%,86% 99%,0% 100%,7% 47%,13% 0%);
-  text-align: center;
-}
-.btn:hover{
-  background-color: var(--text-color);
-  transition: 0.2s;
-}
-
 /* Home */
 
 .home{
@@ -330,18 +313,16 @@ body {
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    margin-right: 10px;
-
 }
 
 .home-img{
-    max-width: 30%;
+    max-width: 34%;
 }
 
 .home.img img{
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .home.text span{
@@ -355,87 +336,146 @@ body {
 }
 
 /* New arive */
-.boximg {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 300px;
-    border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.1); 
-    transition: background-color 0.3s ease; /* Hiệu ứng khi hover */
-  }
-  
-  .boximg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    border-radius: 15px;
-  }
 
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 43, 128, 0.7);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.swiper-container {
+  position: relative; 
+  height: 570px; 
 }
 
-.boximg:hover .overlay {
-    opacity: 1;
-}
+.swiper-button-next,
+.swiper-button-prev {
   
-.boximg .content {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 50%; 
+  transform: translateY(-50%); 
+  z-index: 10; 
+  padding: 10px; 
+}
+
+.swiper-button-next {
+  right: 10px; 
+}
+
+.swiper-button-prev {
+  left: 10px; 
+}
+
+.pagiarrival {
+  position: absolute;
+  bottom: 10px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  z-index: 10; 
+  color: #fff; 
+}
+
+.swipwrapp {
+  position: relative;
+  width: 80% !important; 
+  height: 90% !important; 
+}
+
+.box-arrival {
+  overflow: hidden;
+  width: 20%;
+  height: 300px;
+  border-radius: 15px;
+  
+}
+
+.box-arrival img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.allswipper {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  justify-content: center;
+}
+
+
+.overlayarrival {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(209, 217, 232, 0.7);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-/* Khi hover vào boximg, hiện nút và thay đổi màu nền */
-.boximg:hover {
-  background-color: rgba(0, 128, 0, 0.5); 
-}
-  .more-btn img{
-    width: 40px; 
-    height: 40px;
-    padding-top: 10px;
-    padding-right: 15px;
-  }
-
-.boximg:hover .content {
-  opacity: 1; /* Hiện nút "Buy now" khi hover */
+.box-arrival:hover .overlayarrival {
+  opacity: 1; 
 }
 
-.more-btn{
-  margin-top: 40%;
-  margin-left: 35%;
+.btn-arrival {
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  opacity: 0; 
+  transition: opacity 0.3s ease;
+}
+
+.box-arrival:hover .btn-arrival {
+  opacity: 1; 
+  background-color: rgb(101, 190, 214);
+  color: white;
+  border-radius: 15px;
+}
+
+.box-more {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center; 
+  height: 300px; 
+}
+
+.more-btn {
+  position: absolute;
   background-color: #d5dae0;
-  display: flex; 
-  width: fit-content;
+  display: flex;
+  top: 50%;
+  left: 40%;
   border-radius: 15px;
   transition: transform 1s ease;
 }
-.more{
-  color: rgb(4, 2, 2); 
-  font-size: 25px; 
-  padding: 10px 20px; 
+
+.more {
+  color: rgb(4, 2, 2);
+  font-size: 25px;
+  padding: 10px 20px;
   text-align: center;
 }
 
-.more-btn img{
-  width: 30px; 
+.more-btn img {
+  width: 30px;
   height: 30px;
   padding-top: 10px;
 }
 
-.more-btn:hover{
+.more-btn:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+.more-arrow {
+  padding-top: 5px;
+  padding-right: 20px;
 }
 
 
@@ -483,53 +523,6 @@ body {
 .reviews-container .box:hover{
   transform: scale(1.025);
 }
-
-/*product*/
-.product-container{
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(240px, auto));
-  gap: 1rem;
-  margin-top: 2rem;
-}
-.products img{
-  width: 100%;
-}
-
-.product-container .box{
-  position: relative;
-  padding: 10px;
-  box-shadow: var(--box-shadow);
-}
-
-.product-container .box .content .h2{
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.product-container .box .content .stars i{
-  color: yellow;
-}
-
-.product-container .box .bx-cart-alt{
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 10px;
-  font-size: 24px;
-  background: var(--main-color);
-  color: var(--bg-color);
-}
-
-.product-container .box .bx-cart-alt:hover{
-  background: var(--text-color);
-}
-
-.product-container .box:hover img{
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  transition: 0.3s;
-}
-
 /* footer */
 .footer{
     display: grid;
