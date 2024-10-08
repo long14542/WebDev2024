@@ -437,14 +437,12 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
-  color: black;
   padding: 10px 20px;
   border: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
   opacity: 0; 
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .box-arrival:hover .btn-arrival {
@@ -452,6 +450,11 @@ body {
   background-color: rgb(101, 190, 214);
   color: white;
   border-radius: 15px;
+}
+
+.btn-arrival:hover{
+  transform: translate(-50%, -50%) scale(1.1); 
+  transform-origin: center; 
 }
 
 .box-more {
