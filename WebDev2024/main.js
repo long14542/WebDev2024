@@ -1,4 +1,4 @@
-
+// swiper for new arrival
 var swiper = new Swiper('.swiper-container', {
     slidesPerView: 3,
     spaceBetween: 30,
@@ -8,7 +8,7 @@ var swiper = new Swiper('.swiper-container', {
         disableOnInteraction: false,
     },
     pagination: {
-        el: '.swiper-pagination',
+        el: '.pagiarrival',
         clickable: true,
     },
     navigation: {
@@ -49,12 +49,14 @@ function checkNavigationState(swiper) {
         swiper.navigation.nextEl.classList.remove('swiper-button-disabled');
     }
 }
+
+
 // Swiper for Reviews
 var swiperReviews = new Swiper(".reviews-container", {
     loop: true,
     pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+        el: ".reviews-container .swiper-pagination",
+        clickable: false,
     },
     autoplay: {
         delay: 3000,
