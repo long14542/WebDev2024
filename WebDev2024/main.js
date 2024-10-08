@@ -1,5 +1,5 @@
 
-// swiper for new arrival
+// 
 
 let search = document.querySelector('.search-box');
 
@@ -57,6 +57,8 @@ let header = document.querySelector('header');
 window.addEventListener('scroll',( )=>{
     header.classList.toggle('shadow', window.scrollY > 0);l
 });
+
+// New Arrival Swiper
 var swiper = new Swiper('.swiper-container', {
     slidesPerView: 3,
     spaceBetween: 30,
