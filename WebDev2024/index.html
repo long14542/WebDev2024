@@ -4,22 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reponsive E-Commerce Website</title>
+    <title>Responsive E-Commerce Website</title>
     <!-- link to css -->
     <link rel="stylesheet" href="style.css">
     <!-- Box Icon -->
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <script src="main.js"></script>
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
 </head>
 <body>
     <!-- Navbar -->
     <header>
-        <a href="#home"><img src="img/logo.pngđ" alt="logo"></a>
+        <a href="#home"><img src="img/logo.png" alt=""></a>
 
         <ul class="navbar">
             <li><a href="#home">Home</a></li>
@@ -27,26 +25,62 @@
             <li><a href="#products">Products</a></li>
             <li><a href="#reviews">Reviews</a></li>
         </ul>
+    <!-- Icons -->
+    <div class="header-icons">
+        <i class='bx bx-menu'  id="menu-icon"></i>
+        <i class='bx bx-search' id="search-icons"></i>
+        <i class='bx bxs-cart' id="cart-icons"></i>
+        <i class='bx bx-user'id="user-icons"></i>
+    </div>
+    <!-- search box -->
+    <div class="search-box">
+        <input type="search" name="" id="" placeholder="Search Here...">
+    </div>
 
-        <!-- Icons -->
-        <div class="header-icons">
-            <i class='bx bx-menu'  id="menu-icon"></i>
-            <i class='bx bx-search' id="search-icons"></i>
-            <i class='bx bxs-cart' id="cart-icons"></i>
-            <i class='bx bx-user'id="user-icons"></i>
+    <!-- cart box -->
+    <div class="cart">
+        <!-- box 1 -->
+        <div class="box">
+        <img src="img/img1.jpg" alt="">
+        <div class="text">
+            <h3>Nike Air Force 1 Low</h3>
+            <span>$50.05</span>
+            <span>x1</span>
         </div>
-        <!-- search box -->
-        <div class="search-box">
-            <input type="search" name="" id="" placeholder="Search Here...">
+        <i class='bx bxs-trash'></i>
         </div>
-    
+    <!-- box 2-->
+    <div class="box">
+        <img src="img/img2.jpg" alt="">
+        <div class="text">
+            <h3>MLB Big Ball Chunky</h3>
+            <span>$50.05</span>
+            <span>x1</span>
+        </div>
+        <i class='bx bxs-trash'></i>
+        </div>
+        
+        <h2>Total   $100.01</h2>
+        <a href="#" class="btn">Checkout</a>
+    </div>
+    <!-- user -->
+    <div class="user">
+        <h2>Login Now</h2>
+        <input type="email" placeholder="Your email...">
+        <input type="password " name="" id="" placeholder="Password">
+        <input type="submit" value="Login" class="login-btn">
+        <p>Forget Password <a href="#">Resert Now</a></p>
+        <p>Don't have account <a href="formdangki.html">Create One</a></p>
+    </div>
+        </header>
+  
     <!-- Home -->
     
     <section class="home" id="home">
         <div class="home-text">
             <span>Shop Now</span>
             <h1>New Arrival of <br>Fresh Products</h1>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="#" class="btn-home">Shop Now</a>
         </div>
         <div class="home-img">
             <img src="img/home1.png" alt="nu mau anh">
@@ -55,64 +89,73 @@
 
     <!-- New Arrival -->
     <section class="new" id="new">
-        <div class="heading">
+        <div class="heading" id="heading-arrival">
             <h1>New <span>Arrival</span></h1>
         </div>
-        <div class="swiper-container new-arrival">
-            <div class="swiper-wrapper">
-                <!-- Các slide sản phẩm -->
-                <div class="swiper-slide boximg">
-                    <img src="https://pickleballusa.vn/wp-content/uploads/2024/05/Vot-Pickleball-JOOLA-Tyson-McGuffin-Magnus-3-14mm.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="content">
-                        <a href="#" class="btn">Buy now</a>
+        <div class="allswiper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper swipwrapp">
+                    <!-- product img -->
+                    <div class="swiper-slide box-arrival">
+                        <img src="img/backpack1.png" alt="">
+                        <div class="overlayarrival"></div>
+                        <div class="contentarrival">
+                            <a href="#" class="btn-arrival">Buy now</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide box-arrival">
+                        <img src="img/bao_vot1.png" alt="">
+                        <div class="overlayarrival"></div>
+                        <div class="contentarrival">
+                            <a href="#" class="btn-arrival">Buy now</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide box-arrival">
+                        <img src="img/bong-thi-dau1.png" alt="">
+                        <div class="overlayarrival"></div>
+                        <div class="contentarrival">
+                            <a href="#" class="btn-arrival">Buy now</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide box-arrival">
+                        <img src="img/giay1.png" alt="">
+                        <div class="overlayarrival"></div>
+                        <div class="contentarrival">
+                            <a href="#" class="btn-arrival">Buy now</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide box-arrival">
+                        <img src="img/tui1.png" alt="">
+                        <div class="overlayarrival"></div>
+                        <div class="contentarrival">
+                            <a href="#" class="btn-arrival">Buy now</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide box-arrival">
+                        <img src="img/quan-co-tay.png" alt="">
+                        <div class="overlayarrival"></div>
+                        <div class="contentarrival">
+                            <a href="#" class="btn-arrival">Buy now</a>
+                        </div>
+                    </div>
+                    <!-- "More" button -->
+                    <div class="swiper-slide box-more">
+                        <div class="more-btn">
+                            <div class="more">More</div>
+                            <span class="more-arrow"><img src="img/icons8-arrow-32.png"></span>
+                        </div>
                     </div>
                 </div>
-                <div class="swiper-slide boximg">
-                    <img src="https://pickleballusa.vn/wp-content/uploads/2024/05/Vot-Pickleball-JOOLA-Tyson-McGuffin-Magnus-3-14mm.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="content">
-                        <a href="#" class="btn">Buy now</a>
-                    </div>
-                </div>
-                <div class="swiper-slide boximg">
-                    <img src="https://pickleballusa.vn/wp-content/uploads/2024/05/Vot-Pickleball-JOOLA-Tyson-McGuffin-Magnus-3-14mm.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="content">
-                        <a href="#" class="btn">Buy now</a>
-                    </div>
-                </div>
-                <div class="swiper-slide boximg">
-                    <img src="https://pickleballusa.vn/wp-content/uploads/2024/05/Vot-Pickleball-JOOLA-Tyson-McGuffin-Magnus-3-14mm.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="content">
-                        <a href="#" class="btn">Buy now</a>
-                    </div>
-                </div>
-                <div class="swiper-slide boximg">
-                    <img src="https://pickleballusa.vn/wp-content/uploads/2024/05/Vot-Pickleball-JOOLA-Tyson-McGuffin-Magnus-3-14mm.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="content">
-                        <a href="#" class="btn">Buy now</a>
-                    </div>
-                </div>
-                <div class="swiper-slide boximg">
-                    <img src="https://pickleballusa.vn/wp-content/uploads/2024/05/Vot-Pickleball-JOOLA-Tyson-McGuffin-Magnus-3-14mm.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="content">
-                        <a href="#" class="btn">Buy now</a>
-                    </div>
-                </div>
-                <!-- Slide chứa nút "More" -->
-                <div class="swiper-slide boximg1">
-                    <div class="more-btn">
-                        <div class="more">More</div>
-                        <span><img src="icons8-arrow-32.png"></span>
-                    </div>
-                </div>
+        
+                <!-- Pagination -->
+                <div class="swiper-pagination pagiarrival"></div>
+                <!-- navigation button -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
-
-             <!-- Product -->
+        </div>
+    
+        <!-- Product -->
     <section class="products" id="products">
         <div class="heading">
             <h1>Our <span>Products</span></h1>
@@ -254,13 +297,7 @@
             </div>
         </div>
     </section>
-    
-            <!-- Pagination -->
-            <div class="swiper-pagination"></div>
-            <!-- Nút điều hướng -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
+        
     </section>
     <!-- reviews -->
     <section class="reviews" id="reviews">
@@ -328,10 +365,10 @@
             <p>----------------------------------------------------</p>
 
             <div class="social">
-                <a href="#"><i class='bx bxl-facebook'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
-                <a href="#"><i class='bx bxl-instagram'></i></a>
-                <a href="#"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.facebook.com/usth.edu.vn?locale=vi_VN"><i class='bx bxl-facebook'></i></a>
+                <a href="https://usth.edu.vn/"><i class='bx bxl-twitter'></i></a>
+                <a href="https://usth.edu.vn/"><i class='bx bxl-instagram'></i></a>
+                <a href="https://usth.edu.vn/"><i class='bx bxl-tiktok'></i></a>    
 
             </div>
         </div>
@@ -345,12 +382,9 @@
         </div>
 
         <div class="footer-box">
-            <h3>Branches</h3>
-            <li><a href="#">Pakistan</a></li>
-            <li><a href="#">Japan</a></li>
-            <li><a href="#">India</a></li>
-            <li><a href="#">United States</a></li>
-            <li><a href="#">Canada</a></li>
+            <h3>Contact us</h3>
+            <li><a href="#">Email: group24@st.usth.edu.vn</a></li>
+            <li><a href="#">Hotline: 012345678</a></li>
         </div>
 
         <div class="footer-box">
@@ -359,20 +393,17 @@
                 <img src="img/visa.png" alt="">
                 <img src="img/mastercard.png" alt="">
                 <img src="img/paypal.png" alt="">
-                <img src="img/ame.png" alt="">
             </div>
         </div>
     </section>
-    <!-- Copỷight -->
+    <!-- Copyright -->
 
     <div class="copyright">
-        <p>&#169; CarpoolVenom All Right Reserved.</p>
+        <li><a href="http://127.0.0.1:5501/WebDev2024/WebDev2024/index.html" target="_blank">&#169; 2024 USTHPICKLEBALL.VN - Created by Group 24</a></li>
     </div>
+    
 
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <!-- Thêm link Swiper.js -->
+    <!-- link Swiper css + js -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     
