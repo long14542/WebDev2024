@@ -1,5 +1,6 @@
+/*custom background*/
 
-// 
+/*query*/
 
 let search = document.querySelector('.search-box');
 
