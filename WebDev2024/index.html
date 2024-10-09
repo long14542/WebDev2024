@@ -151,42 +151,42 @@
                         <img src="img/backpack1.png" alt="">
                         <div class="overlayarrival"></div>
                         <div class="contentarrival">
-                            <a href="#" class="btn-arrival">Buy now</a>
+                            <button class="btn-arrival" onclick="showPopup('img/backpack1.png')">Buy now</button>
                         </div>
                     </div>
                     <div class="swiper-slide box-arrival">
                         <img src="img/bao_vot1.png" alt="">
                         <div class="overlayarrival"></div>
                         <div class="contentarrival">
-                            <a href="#" class="btn-arrival">Buy now</a>
+                            <button class="btn-arrival" onclick="showPopup('img/bao_vot1.png')">Buy now</button>
                         </div>
                     </div>
                     <div class="swiper-slide box-arrival">
                         <img src="img/bong-thi-dau1.png" alt="">
                         <div class="overlayarrival"></div>
                         <div class="contentarrival">
-                            <a href="#" class="btn-arrival">Buy now</a>
+                            <button class="btn-arrival" onclick="showPopup('img/bong-thi-dau1.png')">Buy now</button>
                         </div>
                     </div>
                     <div class="swiper-slide box-arrival">
                         <img src="img/giay1.png" alt="">
                         <div class="overlayarrival"></div>
                         <div class="contentarrival">
-                            <a href="#" class="btn-arrival">Buy now</a>
+                            <button class="btn-arrival" onclick="showPopup('img/giay1.png')">Buy now</button>
                         </div>
                     </div>
                     <div class="swiper-slide box-arrival">
                         <img src="img/tui1.png" alt="">
                         <div class="overlayarrival"></div>
                         <div class="contentarrival">
-                            <a href="#" class="btn-arrival">Buy now</a>
+                            <button  class="btn-arrival" onclick="showPopup('img/tui1.png')">Buy now</button>
                         </div>
                     </div>
                     <div class="swiper-slide box-arrival">
                         <img src="img/quan-co-tay.png" alt="">
                         <div class="overlayarrival"></div>
                         <div class="contentarrival">
-                            <a href="#" class="btn-arrival">Buy now</a>
+                            <button class="btn-arrival" onclick="showPopup('img/quan-co-tay.png')">Buy now</button>
                         </div>
                     </div>
                     <!-- "More" button -->
@@ -225,7 +225,7 @@
                         <i class='bx bxs-star-half' ></i>
                     </div>
                     <span>$50.05</span>
-                    <i class='bx bx-cart-alt' ></i>
+                    <i class='bx bx-cart-alt' onclick="showPopup('img/vot1.png')" ></i>
                 </div>
             </div>
 
@@ -242,7 +242,7 @@
                     
                     </div>
                     <span>$25.06</span>
-                    <i class='bx bx-cart-alt' ></i>
+                    <i class='bx bx-cart-alt' onclick="showPopup('img/vot2.png')" ></i>
                 </div>
             </div>
 
@@ -259,7 +259,7 @@
                     
                     </div>
                     <span>$25.06</span>
-                    <i class='bx bx-cart-alt' ></i>
+                    <i class='bx bx-cart-alt' onclick="showPopup('img/vot3.png')"></i>
                 </div>
             </div>
 
@@ -276,7 +276,7 @@
                     
                     </div>
                     <span>$20.05</span>
-                    <i class='bx bx-cart-alt' ></i>
+                    <i class='bx bx-cart-alt'onclick="showPopup('img/giay1.png')" ></i>
                 </div>
             </div>
 
@@ -293,7 +293,7 @@
                     
                     </div>
                     <span>$17.75</span>
-                    <i class='bx bx-cart-alt' ></i>
+                    <i class='bx bx-cart-alt' onclick="showPopup('img/giay2.png')"></i>
                 </div>
             </div>
 
@@ -310,7 +310,7 @@
                     
                     </div>
                     <span>$10.10</span>
-                    <i class='bx bx-cart-alt' ></i>
+                    <i class='bx bx-cart-alt' onclick="showPopup('img/bao_vot1.png')"></i>
                 </div>
             </div>
 
@@ -327,7 +327,7 @@
                     
                     </div>
                     <span>$12.13</span>
-                    <i class='bx bx-cart-alt' ></i>
+                    <i class='bx bx-cart-alt' onclick="showPopup('img/baovot2.png')"></i>
                 </div>
             </div>
 
@@ -344,7 +344,7 @@
                     
                     </div>
                     <span>$26.10</span>
-                    <i class='bx bx-cart-alt' ></i>
+                    <i class='bx bx-cart-alt' onclick="showPopup('img/backpack1.pngs')"></i>
                 </div>
             </div>
         </div>
@@ -450,6 +450,45 @@
             </div>
         </div>
     </section>
+
+    <!-- Buy Product Popup-->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <div class="popup-left">
+            <!-- Placeholder for product image -->
+            <img id="productImage" src="https://via.placeholder.com/150" alt="Product Image">
+        </div>
+        <div class="popup-right">
+            <!-- Form for customer information -->
+            <form id="orderForm">
+                <label for="fullname">Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="phone">Phone number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="note">Note:</label>
+                <textarea id="note" name="note"></textarea>
+
+                <label for="payment">Payment method:</label>
+                <select id="payment" name="payment" required>
+                    <option value="credit-card">Credit card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="cash">COD</option>
+                </select>
+
+                <button type="submit" id="submitOrder">Sent</button>
+            </form>
+        </div>
+    </div>
+</div>
     <!-- Copyright -->
 
     <div class="copyright">
