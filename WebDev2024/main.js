@@ -122,12 +122,6 @@ userIcon.onclick = () => {
     loginPopup.style.display = 'flex';
     
 };
-window.onclick = (e) => {
-    if (e.target === loginPopup || e.target === forgotPasswordPopup || e.target === signupPopup) {
-        e.target.style.display = 'none';
-        
-    }
-};
 
 forgotPasswordLink.addEventListener("click", function() {
   loginPopup.style.display = "none";
@@ -164,28 +158,29 @@ var swiperReviews = new Swiper(".reviews-container", {
     spaceBetween: 20, 
     
 });
-// Get popup elements
+
 var popup = document.getElementById('popup');
 var closeBtn = document.getElementsByClassName("close-btn");
 
 // Function to show popup and pass product details
 function showPopup(productImageSrc) {
     var productImage = document.getElementById('productImage');
-    productImage.src = productImageSrc; // Set product image in the popup
-    popup.style.display = 'block'; // Show popup
+    productImage.src = productImageSrc;
+    popup.style.display = 'block'; 
 }
-
 // Close popup when clicking the close button
 closeBtn.onclick = function() {
+    
     popup.style.display = "none";
 }
 
-// Close popup when clicking outside of the content
-window.onclick = function(event) {
-    if (event.target == popup) {
-        popup.style.display = 'none';
+window.onclick = (e) => {
+    if (e.target === loginPopup || e.target === forgotPasswordPopup || e.target === signupPopup||e.target == popup) {
+        e.target.style.display = 'none';
+        
     }
-}
+};
+
 
 
   
