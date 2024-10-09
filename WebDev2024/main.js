@@ -108,6 +108,46 @@ function checkNavigationState(swiper) {
     }
 }
 
+// Login 
+const loginPopup = document.getElementById("loginPopup");
+const forgotPasswordPopup = document.getElementById("forgotPasswordPopup");
+const signupPopup = document.getElementById("registerPopup");
+const forgotPasswordLink = document.getElementById("forgotPassword"); 
+const backToLoginButton = document.getElementById("backToLogin");
+const signupLink = document.getElementById("signUpLink");
+const signInLink = document.getElementById("signInLink");
+const userIcon = document.querySelector('#user-icons');
+
+userIcon.onclick = () => {
+    loginPopup.style.display = 'flex';
+    
+};
+window.onclick = (e) => {
+    if (e.target === loginPopup || e.target === forgotPasswordPopup || e.target === signupPopup) {
+        e.target.style.display = 'none';
+        
+    }
+};
+
+forgotPasswordLink.addEventListener("click", function() {
+  loginPopup.style.display = "none";
+  forgotPasswordPopup.style.display = "flex";
+});
+
+backToLoginButton.addEventListener("click", function() {
+  forgotPasswordPopup.style.display = "none";
+  loginPopup.style.display = "flex";
+});
+
+signupLink.addEventListener("click", function() {
+  loginPopup.style.display = "none";
+  signupPopup.style.display = "flex";
+});
+
+signInLink.addEventListener("click", function() {
+  signupPopup.style.display = "none";
+  loginPopup.style.display = "flex";
+});
 
 // Swiper for Reviews
 var swiperReviews = new Swiper(".reviews-container", {

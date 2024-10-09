@@ -25,54 +25,105 @@
             <li><a href="#products">Products</a></li>
             <li><a href="#reviews">Reviews</a></li>
         </ul>
-    <!-- Icons -->
-    <div class="header-icons">
-        <i class='bx bx-menu'  id="menu-icon"></i>
-        <i class='bx bx-search' id="search-icons"></i>
-        <i class='bx bxs-cart' id="cart-icons"></i>
-        <i class='bx bx-user'id="user-icons"></i>
-    </div>
-    <!-- search box -->
-    <div class="search-box">
-        <input type="search" name="" id="" placeholder="Search Here...">
-    </div>
+        <!-- Icons -->
+        <div class="header-icons">
+            <i class='bx bx-menu'  id="menu-icon"></i>
+            <i class='bx bx-search' id="search-icons"></i>
+            <i class='bx bxs-cart' id="cart-icons"></i>
+            <i class='bx bx-user'id="user-icons"></i>
+        </div>
+        <!-- search box -->
+        <div class="search-box">
+            <input type="search" name="" id="" placeholder="Search Here...">
+        </div>
 
-    <!-- cart box -->
-    <div class="cart">
-        <!-- box 1 -->
+        <!-- cart box -->
+        <div class="cart">
+            <!-- box 1 -->
+            <div class="box">
+            <img src="img/img1.jpg" alt="">
+            <div class="text">
+                <h3>Nike Air Force 1 Low</h3>
+                <span>$50.05</span>
+                <span>x1</span>
+            </div>
+            <i class='bx bxs-trash'></i>
+            </div>
+        <!-- box 2-->
         <div class="box">
-        <img src="img/img1.jpg" alt="">
-        <div class="text">
-            <h3>Nike Air Force 1 Low</h3>
-            <span>$50.05</span>
-            <span>x1</span>
+            <img src="img/img2.jpg" alt="">
+            <div class="text">
+                <h3>MLB Big Ball Chunky</h3>
+                <span>$50.05</span>
+                <span>x1</span>
+            </div>
+            <i class='bx bxs-trash'></i>
+            </div>
+            
+            <h2>Total   $100.01</h2>
+            <a href="#" class="btn">Checkout</a>
         </div>
-        <i class='bx bxs-trash'></i>
+        <!-- user -->
+        <!-- Popup Login Window -->
+        <div id="loginPopup" class="popup">
+            <div class="popup-content-form">
+                <h2>Login</h2>
+                <form>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+                <button type="button" class="login-btn">Login</button>
+            </form>
+                <div id="forgotPassword" class="word-link">Forgot your Password?</div>
+                <p>Don't have an account? <span id="signUpLink" class="word-link">Sign Up</span></p>
+                <div class="divider">
+                    <hr><span>or continue with</span><hr>
+                    </div>
+                    <div class="social-buttons">
+                        <button class="social-btn google-btn">
+                            <img src="img/google.png" alt="">Google</button>
+                        <button class="social-btn facebook-btn">
+                            <img src="img/facebook.png" alt="">Facebook</button>
+                    </div>
+                
+            </div>
         </div>
-    <!-- box 2-->
-    <div class="box">
-        <img src="img/img2.jpg" alt="">
-        <div class="text">
-            <h3>MLB Big Ball Chunky</h3>
-            <span>$50.05</span>
-            <span>x1</span>
+
+        <div id="forgotPasswordPopup" class="popup">
+            <div class="popup-content-form">
+                <h2>Forgot Password</h2>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button class="confirm-btn" type="submit">Confirm</button>
+                    <button class="back-btn" type="button" id="backToLogin">
+                        <img src="img/go-back.png" alt="">Back to login</button>
+                </form>
+            </div>
         </div>
-        <i class='bx bxs-trash'></i>
+
+        <div id="registerPopup" class="popup">
+            <div class="popup-content-form">
+                <h2>Sign Up</h2>
+                <form>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password">
+                    <div class="terms">
+                        <input type="checkbox" id="agree">
+                        <label for="agree">I agree with <a href="#">Terms & Service</a></label>
+                    </div>
+                </form>
+                <button class="signup-btn" type="submit">Sign Up</button>
+                <p>Already have an account? <span id="signInLink" class="word-link">Sign In</span></p>
+            </div>
         </div>
-        
-        <h2>Total   $100.01</h2>
-        <a href="#" class="btn">Checkout</a>
-    </div>
-    <!-- user -->
-    <div class="user">
-        <h2>Login Now</h2>
-        <input type="email" placeholder="Your email...">
-        <input type="password " name="" id="" placeholder="Password">
-        <input type="submit" value="Login" class="login-btn">
-        <p>Forget Password <a href="#">Resert Now</a></p>
-        <p>Don't have account <a href="formdangki.html">Create One</a></p>
-    </div>
-        </header>
+    </header>
   
     <!-- Home -->
     
@@ -142,7 +193,7 @@
                     <div class="swiper-slide box-more">
                         <div class="more-btn">
                             <div class="more">More</div>
-                            <span class="more-arrow"><img src="img/icons8-arrow-32.png"></span>
+                            <span class="more-arrow"><img src="img/icons8-arrow-32.png" alt=""></span>
                         </div>
                     </div>
                 </div>
