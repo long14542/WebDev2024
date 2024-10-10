@@ -343,25 +343,14 @@ body {
 /* Home */
 
 .home{
-  position: relative;
     width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+    background: rgba(184, 231, 240);
 } 
 
-.home::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(184, 231, 240);
-  z-index: -1; /* Đặt nó ra phía sau nội dung */
-}
 
 .home.text{
     display: flex;
