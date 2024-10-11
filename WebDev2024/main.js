@@ -108,6 +108,40 @@ function checkNavigationState(swiper) {
     }
 }
 
+// Login 
+const loginPopup = document.getElementById("loginPopup");
+const forgotPasswordPopup = document.getElementById("forgotPasswordPopup");
+const signupPopup = document.getElementById("registerPopup");
+const forgotPasswordLink = document.getElementById("forgotPassword"); 
+const backToLoginButton = document.getElementById("backToLogin");
+const signupLink = document.getElementById("signUpLink");
+const signInLink = document.getElementById("signInLink");
+const userIcon = document.querySelector('#user-icons');
+
+userIcon.onclick = () => {
+    loginPopup.style.display = 'flex';
+    
+};
+
+forgotPasswordLink.addEventListener("click", function() {
+  loginPopup.style.display = "none";
+  forgotPasswordPopup.style.display = "flex";
+});
+
+backToLoginButton.addEventListener("click", function() {
+  forgotPasswordPopup.style.display = "none";
+  loginPopup.style.display = "flex";
+});
+
+signupLink.addEventListener("click", function() {
+  loginPopup.style.display = "none";
+  signupPopup.style.display = "flex";
+});
+
+signInLink.addEventListener("click", function() {
+  signupPopup.style.display = "none";
+  loginPopup.style.display = "flex";
+});
 
 // Swiper for Reviews
 var swiperReviews = new Swiper(".reviews-container", {
@@ -124,5 +158,29 @@ var swiperReviews = new Swiper(".reviews-container", {
     spaceBetween: 20, 
     
 });
+
+var popup = document.getElementById('popup');
+var closeBtn = document.getElementsByClassName("close-btn");
+
+// Function to show popup and pass product details
+function showPopup(productImageSrc) {
+    var productImage = document.getElementById('productImage');
+    productImage.src = productImageSrc;
+    popup.style.display = 'block'; 
+}
+// Close popup when clicking the close button
+closeBtn.onclick = function() {
+    
+    popup.style.display = "none";
+}
+
+window.onclick = (e) => {
+    if (e.target === loginPopup || e.target === forgotPasswordPopup || e.target === signupPopup||e.target == popup) {
+        e.target.style.display = 'none';
+        
+    }
+};
+
+
 
   

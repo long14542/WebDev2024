@@ -74,7 +74,7 @@ img{
 section{
   padding: 50px 50px;
 }
-
+/* nav bar */
 header{
   position: fixed;
   width: 100%;
@@ -202,74 +202,229 @@ header.shadow{
   right: 1rem;
   transition:0.2s ;
 }
-
-.user{
-  position: absolute;
-  right:-100%;
-  top: 110%;
-  display: flex;
-  flex-direction: column;
+/* popup-content pop up */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6); /* Nền mờ */
+  display: none;  
   align-items: center;
-  row-gap: 0.5rem;
+  justify-content: center;
+  z-index: 10000;
+}
+/*Login form */
+
+.popup-content-form {
   background: var(--bg-color);
   padding: 20px;
   border-radius: 0.5rem;
   box-shadow: var(--box-shadow);
+  width: 500px;
+  text-align: center;
 }
 
-.user h2{
+.popup-content-form h2 {
   font-size: 1.2rem;
-  color: var(--text-color);
+  margin-bottom: 1rem;
 }
 
-.user .login-btn{
-  background: var(--main-color);
-  color: var(--bg-color);
-  font-size: 1rem;
-  text-transform: uppercase;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.user .login-btn:hover{
-  background: var(--text-color);
-}
-
-.user input{
-  border: none;
-  outline: none;
-  background: var(--second-color);
+.popup-content-form input {
+  width: 100%;
+  margin-bottom: 10px;
   padding: 10px;
   border-radius: 0.5rem;
+  border: 1px solid var(--second-color);
+}
+
+.popup-content-form button {
   width: 100%;
+  padding: 10px;
+  background-color: var(--main-color);
+  color: var(--bg-color);
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
-.user p{
-  font-size: 0.938rem;
-
+.popup-content-form button:hover {
+  background-color: var(--text-color);
 }
 
-.user a{
-  text-decoration: underline;
+.popup-content-form form {
+  margin-bottom: 15px;
+}
+.popup-content-form p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+.word-link {
+  color: var(--main-color);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.popup-content-form a {
   color: var(--main-color);
 }
 
-.user.active{
-  right: 1rem;
+.social-buttons {
+  display: flex;
+  justify-content: space-between; /* Giãn đều các nút */
+  margin: 20px 0;
+}
+.social-btn {
+  flex: 1;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+}
+.social-btn img {
+  width: 20px;
+  margin-right: 10px;
+}
+.social-btn.google-btn {
+  background-color: white; 
+  color: black; 
+  border: 1px solid #DB4437;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-btn.facebook-btn {
+  background-color: white; 
+  color: black; 
+  border: 1px solid #3b5998; 
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+}
+.social-btn.facebook-btn:hover{
+  background-color: rgb(198, 196, 196);
+  letter-spacing: 2px;
+  transition: 0.2s;
+}
+.social-btn.google-btn:hover{
+  background-color: rgb(198, 196, 196);
+  letter-spacing: 2px;
   transition: 0.2s;
 }
 
+/*forgotPassword form */
+.back-btn img{
+  width: 20px;
+  margin-right: 10px;
+}
+#backToLogin{
+  color: var(--text-color);
+  background-color: white;
+}
+/* Divider */
 
-/* Các nút điều hướng của Swiper */
-.swiper-button-next,
-.swiper-button-prev {
-    color: #007bff;
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
 }
 
-.swiper-pagination-bullet {
-    background-color: #007bff;
+.divider hr {
+  flex: 1;
+  border: none;
+  border-top: 1px solid #ccc; /* Đường kẻ màu xám */
+  margin: 0 10px; /* Khoảng cách giữa đường kẻ và chữ */
 }
 
+.divider span {
+  font-size: 14px;
+  color: #888;
+}
+/*sign up form*/
+.registerPopup {
+  max-width: 400px;
+  min-height: fit-content;
+  display:none;
+  margin: 10px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.popup-content-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.registerPopup input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.registerPopup button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.registerPopup button:hover {
+  background-color: var(--text-color);
+}
+.registerPopup p{
+      margin-top: 1rem;
+      font-size: 0.9rem;
+}
+.registerPopup a {
+      color: var(--main-color);
+}
+.terms {
+  display: flex;
+  margin-top: 5px;
+  font-size: 15px;
+  justify-content: flex-start;
+
+}
+
+.terms input[type="checkbox"] {
+  margin-right: 10px;
+  width:fit-content;
+}
+.terms label{
+  align-items: center; 
+}
+.terms a {
+  color: #007bff; /* Màu link xanh dương */
+  text-decoration: none;
+  align-items: center; 
+}
+
+.terms a:hover {
+  text-decoration: underline; /* Gạch chân khi hover */
+}
+.signup-btn{
+  color: var(--main-color);
+  margin: 20px 0px;
+}
+/* body*/
 
 body {
   margin: 100px 120px 10px 120px;
@@ -319,10 +474,11 @@ body {
     max-width: 34%;
 }
 
-.home.img img{
+.home-img img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: bottom right;
 }
 
 .home.text span{
@@ -638,9 +794,9 @@ body {
     text-align: center;
     color: var(--text-color);
 }
+
+
 /*shopping cart*/
-
-
 .paycheck .cart-container {
   max-width: 800px;
   margin: auto;
@@ -709,4 +865,116 @@ body {
 
 .paycheck .checkout-button:hover {
   background-color: #2980b9;
+}
+
+
+/* Popup styling */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.popup-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.popup-left {
+  width: 40%;
+  padding-right: 20px;
+}
+
+.popup-left img {
+  width: 100%;
+  height: auto;
+}
+
+.popup-right {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-right form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-right label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.popup-right input,
+.popup-right textarea,
+.popup-right select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.popup-right textarea {
+  resize: vertical;
+}
+
+.popup-right button {
+  background-color: #129eb0;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.popup-right button:hover {
+  background-color: #129eb0;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+button {
+  margin-top: 10px;
+}
+.close {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #aaa;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
 }
