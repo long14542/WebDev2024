@@ -1,5 +1,5 @@
 
-// swiper for new arrival
+// navbar scroll
 
 let search = document.querySelector('.search-box');
 
@@ -51,7 +51,7 @@ window.onscroll = () =>{
     navbar.classList.remove('active');
 }
 
-//Navbar Scroll
+//New arrival swiper
 let header = document.querySelector('header');
 
 window.addEventListener('scroll',( )=>{
