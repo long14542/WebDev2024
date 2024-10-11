@@ -23,6 +23,44 @@
   /* Box Shadow */
   --box-shadow:2px 2px 10px 4px rgb(14 55 54 / 15%);
 }
+
+/*background*/
+body {
+  background: radial-gradient(circle at 15% 10%, #67dac6, transparent),
+            radial-gradient(circle at 85% 25%, #f0b64b, transparent),
+            radial-gradient(circle at 50% 60%, #ff6b6b, transparent),
+            radial-gradient(circle at 30% 75%, #48c6ef, transparent),
+            radial-gradient(circle at 75% 40%, #ff6b6b, transparent),
+            radial-gradient(circle at 25% 65%, #67dac6, transparent),
+            radial-gradient(circle at 60% 80%, #f0b64b, transparent),
+            radial-gradient(circle at 45% 20%, #ff6b6b, transparent),
+            radial-gradient(circle at 70% 50%, #48c6ef, transparent),
+            radial-gradient(circle at 90% 70%, #67dac6, transparent);
+  background-size: 200% 200%;
+  animation: move-background 10s infinite alternate;
+}
+
+@keyframes move-background {
+  0% {
+    background-position: 10% 10%;
+  }
+  20% {
+    background-position: 80% 20%;
+  }
+  40% {
+    background-position: 30% 90%;
+  }
+  60% {
+    background-position: 90% 60%;
+  }
+  80% {
+    background-position: 20% 80%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
+}
+
 /* custom scroll bar */
 
 html::-webkit-scrollbar{
@@ -456,13 +494,14 @@ body {
 /* Home */
 
 .home{
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: var(--second-color);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(184, 231, 240);
 } 
+
 .home.text{
     display: flex;
     align-items: flex-start;
@@ -494,8 +533,9 @@ body {
 /* New arive */
 
 .swiper-container {
+  margin-top: 30px;
   position: relative; 
-  height: 570px; 
+  height: 500px; 
 }
 
 .swiper-button-next,
@@ -506,14 +546,6 @@ body {
   transform: translateY(-50%); 
   z-index: 10; 
   padding: 10px; 
-}
-
-.swiper-button-next {
-  right: 10px; 
-}
-
-.swiper-button-prev {
-  left: 10px; 
 }
 
 .pagiarrival {
@@ -527,21 +559,20 @@ body {
 
 .swipwrapp {
   position: relative;
-  width: 80% !important; 
   height: 90% !important; 
 }
 
-.box-arrival {
-  overflow: hidden;
-  width: 20%;
+.box-arrival { 
   height: 300px;
   border-radius: 15px;
-  
+  background: rgba(184, 231, 240, 0.732)
 }
 
 .box-arrival img {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 80%;
+  padding-left: 40px !important;
+  padding-top: 70px !important;
   object-fit: cover;
   border-radius: 15px;
 }
@@ -575,14 +606,12 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
-  color: black;
   padding: 10px 20px;
   border: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
   opacity: 0; 
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .box-arrival:hover .btn-arrival {
@@ -592,13 +621,18 @@ body {
   border-radius: 15px;
 }
 
+.btn-arrival:hover{
+  transform: translate(-50%, -50%) scale(1.1); 
+  transform-origin: center; 
+}
+
 .box-more {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  align-items: center; 
   height: 300px; 
+  
 }
 
 .more-btn {
@@ -606,7 +640,7 @@ body {
   background-color: #d5dae0;
   display: flex;
   top: 50%;
-  left: 40%;
+  left: 20%;
   border-radius: 15px;
   transition: transform 1s ease;
 }
@@ -629,11 +663,6 @@ body {
   transform: scale(1.1);
 }
 
-.more-arrow {
-  padding-top: 5px;
-  padding-right: 20px;
-}
-
 /*product*/
 .product-container{
   display: grid;
@@ -649,6 +678,7 @@ body {
   position: relative;
   padding: 10px;
   box-shadow: var(--box-shadow);
+  background: rgba(184, 231, 240, 0.732)
 }
 
 .product-container .box .content .h2{
