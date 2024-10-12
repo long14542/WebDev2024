@@ -610,6 +610,7 @@ body {
   background-color: rgba(209, 217, 232, 0.7);
   opacity: 0;
   transition: opacity 0.3s ease;
+  border-radius: 15px;
 }
 
 .box-arrival:hover .overlayarrival {
@@ -644,10 +645,7 @@ body {
 .box-more {
   position: relative;
   display: flex;
-  
-  
   height: 300px; 
-  
 }
 
 .more-btn {
@@ -655,7 +653,7 @@ body {
   background-color: var(--main-color);
   display: flex;
   top: 50%;
-  left: 35%;
+  left: 25%;
   border-radius: 15px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
   transition: transform 1s ease, box-shadow 1s ease;
