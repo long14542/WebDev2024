@@ -531,7 +531,7 @@ body {
 }
 
 .btn-home {
-  background-color: rgb(101, 190, 214);
+  background-color: var(--main-color);
   color: white;
   padding: 10px 20px;
   border-radius: 10px;
@@ -624,16 +624,16 @@ body {
   padding: 10px 20px;
   border: none;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
   opacity: 0; 
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .box-arrival:hover .btn-arrival {
   opacity: 1; 
-  background-color: rgb(101, 190, 214);
+  background-color: var(--main-color);
   color: white;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 .btn-arrival:hover{
@@ -644,25 +644,26 @@ body {
 .box-more {
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  
+  
   height: 300px; 
   
 }
 
 .more-btn {
   position: absolute;
-  background-color: #d5dae0;
+  background-color: var(--main-color);
   display: flex;
   top: 50%;
-  left: 20%;
+  left: 35%;
   border-radius: 15px;
-  transition: transform 1s ease;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 1s ease, box-shadow 1s ease;
 }
 
 .more {
-  color: rgb(4, 2, 2);
-  font-size: 25px;
+  color: rgb(254, 255, 255);
+  font-size: 20px;
   padding: 10px 20px;
   text-align: center;
 }
@@ -934,8 +935,15 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  transform: scale(0); 
+  opacity: 0; 
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.popup.active .popup-content {
+  transform: scale(1); 
+  opacity: 1; 
+}
 
 .popup-left {
   width: 40%;

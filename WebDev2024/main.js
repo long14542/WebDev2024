@@ -172,6 +172,9 @@ function showPopup(productImageSrc) {
     pagination.style.display = 'none';
     nextButton.style.display = 'none';
     prevButton.style.display = 'none';
+    setTimeout(() => {
+        popup.classList.add('active'); // add class active after 0ms to active effect
+      }, 10);
 }
 // Close popup when clicking the close button
 closeBtn.onclick = function() {
@@ -186,8 +189,14 @@ window.onclick = (e) => {
         pagination.style.display = 'block';
         nextButton.style.display = 'block';
         prevButton.style.display = 'block';
+        popup.classList.remove('active'); // delete class active 
+        setTimeout(() => {
+           popup.style.display = 'none'; 
+        }, 1000);
     }
 };
+
+
 
 
 
