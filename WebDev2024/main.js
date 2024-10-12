@@ -161,12 +161,17 @@ var swiperReviews = new Swiper(".reviews-container", {
 
 var popup = document.getElementById('popup');
 var closeBtn = document.getElementsByClassName("close-btn");
-
+const pagination = document.querySelector('.swiper-pagination.pagiarrival');
+const nextButton = document.querySelector('.swiper-button-next');
+const prevButton = document.querySelector('.swiper-button-prev');
 // Function to show popup and pass product details
 function showPopup(productImageSrc) {
     var productImage = document.getElementById('productImage');
     productImage.src = productImageSrc;
     popup.style.display = 'block'; 
+    pagination.style.display = 'none';
+    nextButton.style.display = 'none';
+    prevButton.style.display = 'none';
 }
 // Close popup when clicking the close button
 closeBtn.onclick = function() {
@@ -177,7 +182,10 @@ closeBtn.onclick = function() {
 window.onclick = (e) => {
     if (e.target === loginPopup || e.target === forgotPasswordPopup || e.target === signupPopup||e.target == popup) {
         e.target.style.display = 'none';
-        
+        // Show the Swiper pagination and navigation buttons again
+        pagination.style.display = 'block';
+        nextButton.style.display = 'block';
+        prevButton.style.display = 'block';
     }
 };
 
