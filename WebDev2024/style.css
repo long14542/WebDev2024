@@ -499,7 +499,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: rgba(184, 231, 240);
+  background: rgba(184, 231, 240, 0.732);
 } 
 
 .home.text{
