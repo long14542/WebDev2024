@@ -165,7 +165,7 @@ header.shadow{
 }
 
 .cart img{
-  width: 100px;
+  width: 75px;
 }
 
 .cart .box{
@@ -643,6 +643,21 @@ body {
 }
 .products img{
   width: 100%;
+}
+
+.products .more{
+  text-align: center;
+  padding-top: 30px;
+}
+
+.products .more a{
+  color: #007bff; 
+  text-decoration: none;
+  align-items: center; 
+}
+
+.products .more a:hover{
+  text-decoration: underline;
 }
 
 .product-container .box{
