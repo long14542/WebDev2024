@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive E-Commerce Website</title>
+    <!-- link to css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Box Icon -->
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+</head>
+<body>
+        <!-- Navbar -->
+        <header>
+            <a href="#home"><img src="img/logo.png" alt=""></a>
+    
+            <ul class="navbar">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#new">New Arrival</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+            </ul>
+        <!-- Icons -->
+        <div class="header-icons">
+            <i class='bx bx-menu'  id="menu-icon"></i>
+            <i class='bx bx-search' id="search-icons"></i>
+            <i class='bx bxs-cart' id="cart-icons"></i>
+            <i class='bx bx-user'id="user-icons"></i>
+        </div>
+        <!-- search box -->
+        <div class="search-box">
+            <input type="search" name="" id="" placeholder="Search Here...">
+        </div>
+    
+        <!-- cart box -->
+        <div class="cart">
+            <!-- box 1 -->
+            <div class="box">
+            <img src="img/backpack1.png" alt="">
+            <div class="text">
+                <h3>Pro backpack</h3>
+                <span>$26.10</span>
+                <span>x1</span>
+            </div>
+            <i class='bx bxs-trash'></i>
+            </div>
+        <!-- box 2-->
+        <div class="box">
+            <img src="img/paddle2.png" alt="">
+            <div class="text">
+                <h3>Paddle pro vip</h3>
+                <span>$19.10</span>
+                <span>x</span>
+            </div>
+            <i class='bx bxs-trash'></i>
+            </div>
+            
+            <h2>Total   $100.01</h2>
+            <a href="#" class="btn">Checkout</a>
+        </div>
+        <!-- user -->
+        <div class="user">
+            <h2>Login Now</h2>
+            <input type="email" placeholder="Your email...">
+            <input type="password" name="" id="" placeholder="Password">
+            <input type="submit" value="Login" class="login-btn">
+            <p>Forget Password <a href="#">Resert Now</a></p>
+            <p>Don't have account <a href="formdangki.html">Create One</a></p>
+        </div>
+            </header>
+    
+    <!--Cart detail-->
+    <section class="paycheck" id="paycheck"> 
+        <div class="cart-container">
+            <h1>Your Shopping Cart</h1>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="img/backpack1.png" alt="Product 1" class="product-image">
+                            <span>Pro backpack</span>
+                        </td>
+                        <td>$26.10</td>
+                        <td><input type="number" value="1" min="1"></td>
+                        <td>$26.10</td>
+                        <td><button class="remove-button">Remove</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/vot2.png" alt="Product 2" class="product-image">
+                            <span>Paddle pro vip</span>
+                        </td>
+                        <td>$19.10</td>
+                        <td><input type="number" value="2" min="1"></td>
+                        <td>$38.20</td>
+                        <td><button class="remove-button">Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="cart-summary">
+                <h2>Cart Summary</h2>
+                <h3>Total: $64.40</h3>
+                <button class="checkout-button">Buy all</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+
+    <section class="footer">
+        <div class="footer-box">
+            <h2>USTH Pickleball</h2>
+            <p>----------------------------------------------------</p>
+
+            <div class="social">
+                <a href="https://www.facebook.com/usth.edu.vn?locale=vi_VN"><i class='bx bxl-facebook'></i></a>
+                <a href="https://usth.edu.vn/"><i class='bx bxl-twitter'></i></a>
+                <a href="https://usth.edu.vn/"><i class='bx bxl-instagram'></i></a>
+                <a href="https://usth.edu.vn/"><i class='bx bxl-tiktok'></i></a>    
+
+            </div>
+        </div>
+        <div class="footer-box">
+            <h3>Support</h3>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Help & Support</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Term Of Use</a></li>
+            <li><a href="#">FAQ</a></li>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact us</h3>
+            <li><a href="#">Email: group24@st.usth.edu.vn</a></li>
+            <li><a href="#">Hotline: 012345678</a></li>
+        </div>
+
+        <div class="footer-box">
+            <h3>Payment Meethod</h3>
+            <div class="payment">
+                <img src="img/visa.png" alt="">
+                <img src="img/mastercard.png" alt="">
+                <img src="img/paypal.png" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- Copyright -->
+
+    <div class="copyright">
+        <li><a href="http://127.0.0.1:5501/WebDev2024/WebDev2024/index.html" target="_blank">&#169; 2024 USTHPICKLEBALL.VN - Created by Group 24</a></li>
+    </div>
+    
+
+    <!-- link Swiper css + js -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <!-- link to js -->
+    <script src="main.js"></script>
+</body>
+</html>
