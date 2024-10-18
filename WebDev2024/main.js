@@ -160,7 +160,7 @@ var swiperReviews = new Swiper(".reviews-container", {
 });
 
 var popup = document.getElementById('popup');
-var closeBtn = document.getElementsByClassName("close-btn");
+var closeBtn = document.getElementsByClassName("close-btn")[0];
 const pagination = document.querySelector('.swiper-pagination.pagiarrival');
 const nextButton = document.querySelector('.swiper-button-next');
 const prevButton = document.querySelector('.swiper-button-prev');
@@ -178,20 +178,23 @@ function showPopup(productImageSrc) {
 }
 // Close popup when clicking the close button
 closeBtn.onclick = function() {
-    
-    popup.style.display = "none";
+    closePopup();
 }
 
 window.onclick = (e) => {
     if (e.target === loginPopup || e.target === forgotPasswordPopup || e.target === signupPopup||e.target == popup) {
-        popup.classList.remove('active'); // delete class active 
+        closePopup();
+    }
+};
+
+function closePopup() {
+    popup.classList.remove('active'); // delete class active 
         setTimeout(() => {
            popup.style.display = 'none'; 
            pagination.style.display = 'block';
            nextButton.style.display = 'block';
            prevButton.style.display = 'block';
         }, 300);
-    }
 };
 
 
