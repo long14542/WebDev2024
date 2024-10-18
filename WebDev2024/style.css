@@ -203,7 +203,7 @@ header.shadow{
 }
 
 .cart img{
-  width: 100px;
+  width: 75px;
 }
 
 .cart .box{
@@ -688,6 +688,21 @@ body {
   width: 100%;
 }
 
+.products .more{
+  text-align: center;
+  padding-top: 30px;
+}
+
+.products .more a{
+  color: #007bff; 
+  text-decoration: none;
+  align-items: center; 
+}
+
+.products .more a:hover{
+  text-decoration: underline;
+}
+
 .product-container .box{
   position: relative;
   padding: 10px;
@@ -913,16 +928,7 @@ body {
 
 
 /* Popup styling */
-.popup {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-}
+
 
 .popup-content {
   background-color: white;
@@ -933,15 +939,9 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  transform: scale(0); 
-  opacity: 0; 
-  transition: transform 0.3s ease, opacity 0.3s ease;
+
 }
 
-.popup.active .popup-content {
-  transform: scale(1); 
-  opacity: 1; 
-}
 
 .popup-left {
   width: 40%;
