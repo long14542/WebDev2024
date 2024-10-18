@@ -58,7 +58,7 @@
         .navbar a:hover {
             color: var(--main-color);
         }
-
+        
         /* Responsive for mobile */
         @media (max-width: 991px) {
             header {
@@ -177,6 +177,7 @@
         .btn:hover {
             background-color: #02171d;
         }
+        
 
         /* Responsive cho màn hình nhỏ hơn */
         @media (max-width: 768px) {
@@ -214,6 +215,14 @@
         .color-option:hover {
             border-color: #000;
         }
+
+        .additional-info {
+            margin-top: 20px;
+        }
+
+        .additional-info .info-item {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
@@ -229,7 +238,7 @@
         <div class="header-icons">
             <i class='bx bx-menu' id="menu-icon"></i>
             <i class='bx bx-search' id="search-icons"></i>
-            <i class='bx bxs-cart' id="cart-icons"></i>
+            <i class='bx bxs-cart' id="cart-icons'></i>
             <i class='bx bx-user' id="user-icons"></i>
         </div>
         <div class="search-box">
@@ -275,29 +284,209 @@
             <input type="email" name="" id="" placeholder="Your Email">
             <button class="btn">Subscribe</button>
         </div>
+        
     </section>
 
     <script>
         const products = [
-            {
-                id: 1,
-                name: "Nike Air Force 1 Low",
-                image: "img/p1.png",
-                price: "$50.05",
-                description: "The Nike Air Force 1 Low is a timeless sneaker that blends style and comfort. Designed with high-quality materials and perfect for both casual wear and performance activities.",
-                stars: 4.5,
-                colors: ["red", "blue", "green", "yellow"]
-            },
-            {
-                id: 2,
-                name: "Nike Air Max 270",
-                image: "img/p2.png",
-                price: "$120.00",
-                description: "Experience the ultimate comfort with Nike Air Max 270.",
-                stars: 5,
-                colors: ["black", "white", "grey"]
-            },
-        ];
+                {
+                    id: 1,
+                    name: "MF backpack",
+                    image: "img/backpack1.png",
+                    price: "$50.05",
+                    description: "Who needs a backpack when you have pockets? Oh, wait, this one doesn't have any pockets.",
+                    stars: 4.5,
+                    colors: ["red", "blue", "green", "yellow"],
+                    sku: "BP001",
+                    brand: "Nike",
+                    material: "Leather",
+                    category: "Backpack",
+                    sizes: ["One Size"]
+                },
+                {
+                    id: 2,
+                    name: "Joola Pickleball Paddle Cover",
+                    image: "img/bao_vot1.png",
+                    price: "$20.99", // Adjust the price as needed
+                    description: "Protect your Joola pickleball paddle with this durable and stylish cover. Made from high-quality materials, it provides excellent protection against scratches, dirt, and moisture.",
+                    stars: 4.8, // Adjust the rating as needed
+                    colors: ["Black"],
+                    sku: "PP002",
+                    brand: "Joola",
+                    material: "Neoprene",
+                    category: "Pickleball Accessories",
+                    sizes: ["One Size"]
+                },
+                {
+                    id: 3,
+                    name: "NIUPIPO Pickleball Balls",
+                    image: "img/bong-thi-dau1.png",  // Đường dẫn tới ảnh tải lên của bạn
+                    price: "$15.99",
+                    description: "These NIUPIPO pickleball balls are designed for precision and durability, ideal for both indoor and outdoor play. Engineered with high-quality materials for perfect bounce and long-lasting play.",
+                    stars: 4.7,
+                    colors: ["green"],
+                    sku: "PKB001",
+                    brand: "NIUPIPO",
+                    material: "Plastic",
+                    category: "Sports Equipment",
+                    sizes: ["Standard"]
+                },
+                {
+                    id: 4,
+                    name: "ASICS Court Shoes",
+                    image: "img/giay1.png",  // Đường dẫn tới ảnh tải lên của bạn
+                    price: "$89.99",
+                    description: "ASICS Court Shoes are engineered for maximum performance on court surfaces, offering superior grip, comfort, and style. Perfect for athletes who demand both functionality and aesthetics.",
+                    stars: 4.8,
+                    colors: ["white", "green"],
+                    sku: "ASC001",
+                    brand: "ASICS",
+                    material: "Synthetic",
+                    category: "Footwear",
+                    sizes: ["7", "8", "9", "10", "11"]
+                },
+                {
+                    id: 5,
+                    name: "JOOLA Sports Bag",
+                    image: "img/tui1.png",  // Đường dẫn tới ảnh tải lên của bạn
+                    price: "$45.00",
+                    description: "JOOLA Sports Bag with vibrant design, perfect for carrying all your sports equipment. Spacious, durable, and designed with high-quality materials.",
+                    stars: 4.7,
+                    colors: ["pink", "black"],
+                    sku: "JOOLA002",
+                    brand: "JOOLA",
+                    material: "Polyester",
+                    category: "Bags",
+                    sizes: ["8", "9", "10", "11"]
+                },
+                {
+                    id: 6,
+                    name: "JOOLA Trinity Wristbands (2 Pack)",
+                    image: "img/quan-co-tay.png", // Assuming you have an image for the wristbands
+                    price: "$12.99", // Adjust the price as needed
+                    description: "Stay cool and comfortable during your pickleball games with the JOOLA Trinity Wristbands. These moisture-wicking wristbands help absorb sweat and keep your hands dry. The elastic design ensures a comfortable fit.",
+                    stars: 4.7, // Adjust the rating as needed
+                    colors: ["White"],
+                    sku: "WB003",
+                    brand: "Joola",
+                    material: "Polyester",
+                    category: "Pickleball Accessories",
+                    sizes: ["One size"]
+                },
+                {
+                    id: 7,
+                    name: "AMASPORT Nucleon Pro Pickleball Paddle (2 Pack)",
+                    image: "img/vot1.png", // Assuming you have an image for the paddles
+                    price: "$199.99", // Adjust the price as needed
+                    description: "Elevate your pickleball game with the AMASPORT Nucleon Pro Pickleball Paddle. Featuring a graphite surface for optimal control and power, this paddle is perfect for both beginners and experienced players. The ergonomic handle provides a comfortable grip, while the stylish design adds a touch of personality.",
+                    stars: 5, // Adjust the rating as needed
+                    colors: ["Blue", "Red"],
+                    sku: "PP004",
+                    brand: "AMASPORT",
+                    material: "Graphite",
+                    category: "Pickleball Paddles",
+                    sizes: ["no size"]
+                },
+                {
+                    id: 8,
+                    name: "Gamma 405 Pickleball Paddle",
+                    image: "img/vot2.png", // Assuming you have an image for the paddle
+                    price: "$79.99", // Adjust the price as needed
+                    description: "Experience exceptional power and control with the Gamma 405 Pickleball Paddle. Featuring a textured graphite surface and Sensa Core technology, this paddle delivers explosive power and precise shots. The extended grip length is perfect for two-handed backhands, while the comfortable handle ensures a secure grip.",
+                    stars: 4.9, // Adjust the rating as needed
+                    colors: ["Black/White"],
+                    sku: "PP005",
+                    brand: "Gamma",
+                    material: "Graphite",
+                    category: "Pickleball Paddles",
+                    sizes: ["no size"]
+                },
+                {
+                    id: 9,
+                    name: "JOCAROLA Pickleball Paddles (2 Pack)",
+                    image: "img/vot3.png", // Assuming you have an image for the paddles
+                    price: "$179.99", // Adjust the price as needed
+                    description: "Experience unmatched performance with the JOCAROLA Pickleball Paddles. These high-quality paddles feature a durable graphite face and a comfortable grip for optimal control and power. The stylish design and sleek finish make them a standout choice for any pickleball enthusiast.",
+                    stars: 4.8, // Adjust the rating as needed
+                    colors: ["Black"],
+                    sku: "PP006",
+                    brand: "JOCAROLA",
+                    material: "Graphite",
+                    category: "Pickleball Paddles",
+                    sizes: ["no size"]
+                },
+                {
+                    id: 10,
+                    name: "NikeCourt Air Zoom Vapor 11 Tennis Shoes",
+                    image: "img/giay3.png",
+                    price: "$139.99",
+                    description: "Experience ultimate performance on the court with the NikeCourt Air Zoom Vapor 11 Tennis Shoes. Featuring a lightweight design, responsive cushioning, and excellent traction, these shoes are built for speed and agility. The breathable mesh upper keeps your feet cool and comfortable throughout the game.",
+                    stars: 5,
+                    colors: ["black", "white", "grey"],
+                    sku: "AM270B009",
+                    brand: "Nike",
+                    material: "Mesh",
+                    category: "Shoes",
+                    sizes: ["8", "9", "10", "11"]
+                },
+                {
+                    id: 11,
+                    name: "Nike Air Max 270",
+                    image: "img/giay2.png",
+                    price: "$120.00",
+                    description: "Experience the ultimate comfort with Nike Air Max 270.",
+                    stars: 5,
+                    colors: ["black", "white", "grey"],
+                    sku: "AM270B010",
+                    brand: "Nike",
+                    material: "Mesh",
+                    category: "Shoes",
+                    sizes: ["8", "9", "10", "11"]
+                },
+                {
+                    id: 12,
+                    name: "Noizzas pickleball paddle",
+                    image: "img/vot6.png",
+                    price: "$120.00",
+                    description: "Experience the ultimate comfort with Nike Air Max 270.",
+                    stars: 5,
+                    colors: ["black", "white", "grey"],
+                    sku: "AM270B011",
+                    brand: "Noizzas",
+                    material: "Mesh",
+                    category: "Paddle",
+                    sizes: ["no size"]
+                },
+                {
+                    id: 13,
+                    name: "Joola Air Max Bag",
+                    image: "img/baovot2.png",
+                    price: "$20.99", // Adjust the price as needed
+                    description: "Protect your Joola pickleball paddle with this durable and stylish cover. Made from high-quality materials, it provides excellent protection against scratches, dirt, and moisture.",
+                    stars: 4.8, // Adjust the rating as needed
+                    colors: ["Black"],
+                    sku: "PP002",
+                    brand: "Joola",
+                    material: "Neoprene",
+                    category: "Pickleball Accessories",
+                    sizes: ["One Size"]
+                },
+                {
+                    id: 14,
+                    name: "Nike Air Max 270",
+                    image: "img/backpack2.png",
+                    price: "$50.05",
+                    description: "Who needs a backpack when you have pockets? Oh, wait, this one doesn't have any pockets.",
+                    stars: 4.5,
+                    colors: ["red", "blue", "green", "yellow"],
+                    sku: "BP001",
+                    brand: "Nike",
+                    material: "Leather",
+                    category: "Backpack",
+                    sizes: ["One Size"]
+                },
+            ];
+
 
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -325,11 +514,21 @@
                     </div>
                     <span class="price">${product.price}</span>
                     <p>${product.description}</p>
+                    <div class="additional-info">
+                        <p class="info-item"><strong>SKU:</strong> ${product.sku}</p>
+                        <p class="info-item"><strong>Brand:</strong> ${product.brand}</p>
+                        <p class="info-item"><strong>Material:</strong> ${product.material}</p>
+                        <p class="info-item"><strong>Category:</strong> ${product.category}</p>
+                        <p class="info-item"><strong>Size Options:</strong> ${product.sizes.join(', ')}</p>
+                    </div>
                     <div class="quantity">
                         <label for="quantity">Quantity:</label>
                         <input type="number" id="quantity" name="quantity" min="1" value="1">
                     </div>
+                    <div>
                     <button class="btn">Add to Cart</button>
+                    <button class="btn" id="buy-now">Buy Now</button>
+                    </div>
                 </div>
             `;
         } else {
@@ -337,16 +536,18 @@
         }
 
         function generateStars(rating) {
+            const fullStars = Math.floor(rating);
+            const halfStar = rating % 1 !== 0;
             let starsHtml = '';
-            for (let i = 1; i <= 5; i++) {
-                if (i <= Math.floor(rating)) {
-                    starsHtml += `<i class='bx bxs-star'></i>`;
-                } else if (i - rating < 1) {
-                    starsHtml += `<i class='bx bxs-star-half'></i>`;
-                } else {
-                    starsHtml += `<i class='bx bx-star'></i>`;
-                }
+
+            for (let i = 0; i < fullStars; i++) {
+                starsHtml += '<i class="bx bxs-star"></i>';
             }
+
+            if (halfStar) {
+                starsHtml += '<i class="bx bxs-star-half"></i>';
+            }
+
             return starsHtml;
         }
     </script>
