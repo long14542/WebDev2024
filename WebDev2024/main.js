@@ -112,51 +112,66 @@ function checkNavigationState(swiper) {
 const loginPopup = document.getElementById("loginPopup");
 const forgotPasswordPopup = document.getElementById("forgotPasswordPopup");
 const signupPopup = document.getElementById("registerPopup");
-const forgotPasswordLink = document.getElementById("forgotPassword"); 
+const forgotPasswordLink = document.getElementById("forgotPassword");
 const backToLoginButton = document.getElementById("backToLogin");
 const signupLink = document.getElementById("signUpLink");
 const signInLink = document.getElementById("signInLink");
 const userIcon = document.querySelector('#user-icons');
 
+function togglePopup(popup, display, isActive) {
+    if (isActive) {
+        popup.style.display = display; // Hiện popup
+        setTimeout(() => {
+            popup.classList.add('active'); // Thêm class active sau 10ms
+        }, 10);
+    } else {
+        // exit popup
+        popup.classList.add('exiting');
+        setTimeout(() => {
+            popup.classList.remove('active'); // Xóa class active và exiting
+            popup.style.display = 'none'; 
+        }, 300); 
+    }
+}
+
 userIcon.onclick = () => {
-    loginPopup.style.display = 'flex';
-    
+    togglePopup(loginPopup, 'flex', true);
 };
 
 forgotPasswordLink.addEventListener("click", function() {
-  loginPopup.style.display = "none";
-  forgotPasswordPopup.style.display = "flex";
+    togglePopup(loginPopup, 'none', false);
+    togglePopup(forgotPasswordPopup, 'flex', true);
 });
 
 backToLoginButton.addEventListener("click", function() {
-  forgotPasswordPopup.style.display = "none";
-  loginPopup.style.display = "flex";
+    togglePopup(forgotPasswordPopup, 'none', false);
+    togglePopup(loginPopup, 'flex', true);
 });
 
 signupLink.addEventListener("click", function() {
-  loginPopup.style.display = "none";
-  signupPopup.style.display = "flex";
+    togglePopup(loginPopup, 'none', false);
+    togglePopup(signupPopup, 'flex', true);
 });
 
 signInLink.addEventListener("click", function() {
-  signupPopup.style.display = "none";
-  loginPopup.style.display = "flex";
+    togglePopup(signupPopup, 'none', false);
+    togglePopup(loginPopup, 'flex', true);
 });
 
-// Hàm để đóng tất cả các popup
+
 function closeAllPopups() {
-    loginPopup.style.display = 'none';
-    forgotPasswordPopup.style.display = 'none';
-    signupPopup.style.display = 'none';
+    togglePopup(loginPopup, 'none', false);
+    togglePopup(forgotPasswordPopup, 'none', false);
+    togglePopup(signupPopup, 'none', false);
 }
 
-// Xử lý sự kiện click trên toàn bộ cửa sổ
+// window click event
 window.onclick = function(event) {
-    // Kiểm tra nếu người dùng nhấp bên ngoài popup
     if (event.target === loginPopup || event.target === forgotPasswordPopup || event.target === signupPopup) {
         closeAllPopups(); // Gọi hàm để đóng tất cả popup
     }
 };
+
 
 // Swiper for Reviews
 var swiperReviews = new Swiper(".reviews-container", {
