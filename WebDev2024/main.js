@@ -183,9 +183,9 @@ closeBtn.onclick = function() {
 window.onclick = (e) => {
     if (e.target === loginPopup || e.target === forgotPasswordPopup || e.target === signupPopup||e.target == popup) {
         e.target.style.display='none';
-        pagination.style.display = 'flex';
-        nextButton.style.display = 'flex';
-        prevButton.style.display = 'flex';
+        pagination.style.display = 'block';
+        nextButton.style.display = 'block';
+        prevButton.style.display = 'block';
 
     }
 };
