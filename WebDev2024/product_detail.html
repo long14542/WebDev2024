@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Detail</title>
+    <title>Responsive E-Commerce Website</title>
+    <!-- link to css -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <!-- Box Icon -->
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    
+</head>
     <style>
         /* Navbar styling */
         header {
@@ -58,7 +64,7 @@
         .navbar a:hover {
             color: var(--main-color);
         }
-
+        
         /* Responsive for mobile */
         @media (max-width: 991px) {
             header {
@@ -167,16 +173,97 @@
         }
 
         .btn {
-            background-color: #129eb0;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
+            width: 165px;
+            padding: 0.7rem 1.2rem;
+            background: var(--main-color);
+            color: var(--bg-color);
+            font-weight: 500;
+            display: inline-block;
+            text-transform: uppercase;
+            clip-path: polygon(100% 0,93% 50%,86% 99%,0% 100%,7% 47%,13% 0%);
+            text-align: center;
         }
 
         .btn:hover {
-            background-color: #02171d;
+            background-color: var(--text-color);
+            letter-spacing: 1px;
+            transition: 0.2s;
         }
+
+        .checkout-button {
+            width: 135px;
+            padding: 0.7rem 1.2rem;
+            background: var(--main-color);
+            color: var(--bg-color);
+            font-weight: 500;
+            display: inline-block;
+            text-transform: uppercase;
+            clip-path: polygon(100% 0,93% 50%,86% 99%,0% 100%,7% 47%,13% 0%);
+            text-align: center;
+        }
+
+        .checkout-button:hover {
+            background-color: var(--text-color);
+            letter-spacing: 2px;
+            transition: 0.2s;
+        }
+        .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup Content */
+.popup-content-form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content-form h2 {
+    text-align: center;
+}
+
+.popup-content-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.popup-content-form input,
+.popup-content-form textarea,
+.popup-content-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#submitOrder {
+    width: 135px;
+  padding: 0.7rem 1.2rem;
+  background: var(--main-color);
+  color: var(--bg-color);
+  font-weight: 500;
+  display: inline-block;
+  text-transform: uppercase;
+  clip-path: polygon(100% 0,93% 50%,86% 99%,0% 100%,7% 47%,13% 0%);
+  text-align: center;
+}
+
+#submitOrder:hover {
+    background-color: var(--text-color);
+  letter-spacing: 2px;
+  transition: 0.2s;
+}
 
         /* Responsive cho màn hình nhỏ hơn */
         @media (max-width: 768px) {
@@ -214,28 +301,127 @@
         .color-option:hover {
             border-color: #000;
         }
+
+        .additional-info {
+            margin-top: 20px;
+        }
+
+        .additional-info .info-item {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <a href="index.html#home"><img src="img/nike-logo.png" alt=""></a>
+        <a href="index.html#home"><img src="img/logo.png" alt=""></a>
+
         <ul class="navbar">
             <li><a href="index.html#home">Home</a></li>
             <li><a href="index.html#new">New Arrival</a></li>
             <li><a href="index.html#products">Products</a></li>
             <li><a href="index.html#reviews">Reviews</a></li>
         </ul>
+        <!-- Icons -->
         <div class="header-icons">
-            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-menu'  id="menu-icon"></i>
             <i class='bx bx-search' id="search-icons"></i>
             <i class='bx bxs-cart' id="cart-icons"></i>
-            <i class='bx bx-user' id="user-icons"></i>
+            <i class='bx bx-user'id="user-icons"></i>
         </div>
+        <!-- search box -->
         <div class="search-box">
             <input type="search" name="" id="" placeholder="Search Here...">
         </div>
+
+        <!-- cart box -->
+        <div class="cart">
+            <!-- box 1 -->
+            <div class="box">
+            <img src="img/backpack1.png" alt="">
+            <div class="text">
+                <h3>Pro backpack</h3>
+                <span>$26.10</span>
+                <span>x1</span>
+            </div>
+            <i class='bx bxs-trash'></i>
+            </div>
+        <!-- box 2-->
+        <div class="box">
+            <img src="img/vot2.png" alt="">
+            <div class="text">
+                <h3>Paddle pro vip</h3>
+                <span>$19.10</span>
+                <span>x2</span>
+            </div>
+            <i class='bx bxs-trash'></i>
+            </div>
+            
+            <h2>Total   $64.40</h2>
+            <a href="cart_paycheck.html" class="btn">Checkout</a>
+        </div>
+        <!-- user -->
+        <!-- Popup Login Window -->
+        <div id="loginPopup" class="popup">
+            <div class="popup-content-form">
+                <h2>Login</h2>
+                <form>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+                <button type="button" class="login-btn">Login</button>
+            </form>
+                <div id="forgotPassword" class="word-link">Forgot your Password?</div>
+                <p>Don't have an account? <span id="signUpLink" class="word-link">Sign Up</span></p>
+                <div class="divider">
+                    <hr><span>or continue with</span><hr>
+                    </div>
+                    <div class="social-buttons">
+                        <button class="social-btn google-btn">
+                            <img src="img/google.png" alt="">Google</button>
+                        <button class="social-btn facebook-btn">
+                            <img src="img/facebook.png" alt="">Facebook</button>
+                    </div>
+                
+            </div>
+        </div>
+
+        <div id="forgotPasswordPopup" class="popup">
+            <div class="popup-content-form">
+                <h2>Forgot Password</h2>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button class="confirm-btn" type="submit">Confirm</button>
+                    <button class="back-btn" type="button" id="backToLogin">
+                        <img src="img/go-back.png" alt="">Back to login</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="registerPopup" class="popup">
+            <div class="popup-content-form">
+                <h2>Sign Up</h2>
+                <form>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password">
+                    <div class="terms">
+                        <input type="checkbox" id="agree">
+                        <label for="agree">I agree with <a href="#">Terms & Service</a></label>
+                    </div>
+                </form>
+                <button class="signup-btn" type="submit">Sign Up</button>
+                <p>Already have an account? <span id="signInLink" class="word-link">Sign In</span></p>
+            </div>
+        </div>
     </header>
+  
 
     <section class="product-detail" id="product-detail">
         <!-- Product information will be populated by JavaScript -->
@@ -243,13 +429,15 @@
 
     <section class="footer">
         <div class="footer-box">
-            <h2>Nike</h2>
+            <h2>USTH Pickleball</h2>
             <p>----------------------------------------------------</p>
+
             <div class="social">
-                <a href="#"><i class='bx bxl-facebook'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
-                <a href="#"><i class='bx bxl-instagram'></i></a>
-                <a href="#"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.facebook.com/usth.edu.vn?locale=vi_VN"><i class='bx bxl-facebook'></i></a>
+                <a href="https://usth.edu.vn/"><i class='bx bxl-twitter'></i></a>
+                <a href="https://usth.edu.vn/"><i class='bx bxl-instagram'></i></a>
+                <a href="https://usth.edu.vn/"><i class='bx bxl-tiktok'></i></a>    
+
             </div>
         </div>
         <div class="footer-box">
@@ -257,47 +445,270 @@
             <li><a href="#">Product</a></li>
             <li><a href="#">Help & Support</a></li>
             <li><a href="#">Return Policy</a></li>
-            <li><a href="#">Terms Of Use</a></li>
+            <li><a href="#">Term Of Use</a></li>
             <li><a href="#">FAQ</a></li>
         </div>
 
         <div class="footer-box">
-            <h3>Branches</h3>
-            <li><a href="#">Pakistan</a></li>
-            <li><a href="#">Japan</a></li>
-            <li><a href="#">India</a></li>
-            <li><a href="#">China</a></li>
+            <h3>Contact us</h3>
+            <li><a href="#">Email: group24@st.usth.edu.vn</a></li>
+            <li><a href="#">Hotline: 012345678</a></li>
         </div>
 
         <div class="footer-box">
-            <h3>Newsletter</h3>
-            <p>Subscribe to our newsletter for updates on offers and sales!</p>
-            <input type="email" name="" id="" placeholder="Your Email">
-            <button class="btn">Subscribe</button>
+            <h3>Payment Meethod</h3>
+            <div class="payment">
+                <img src="img/visa.png" alt="">
+                <img src="img/mastercard.png" alt="">
+                <img src="img/paypal.png" alt="">
+            </div>
         </div>
     </section>
+    <!-- Copyright -->
+
+    <div id="orderPopup" class="popup">
+        <div class="popup-content-form">
+            <h2>Order Information</h2>
+            <form id="orderForm">
+                <label for="fullname">Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+    
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+    
+                <label for="phone">Phone number:</label>
+                <input type="tel" id="phone" name="phone" required>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="note">Note:</label>
+                <textarea id="note" name="note"></textarea>
+    
+                <label for="payment">Payment method:</label>
+                <select id="payment" name="payment" required>
+                    <option value="credit-card">Credit card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="cash">COD</option>
+                </select>
+    
+                <button type="submit" id="submitOrder">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <li><a href="http://127.0.0.1:5501/WebDev2024/WebDev2024/index.html" target="_blank">&#169; 2024 USTHPICKLEBALL.VN - Created by Group 24</a></li>
+    </div>
+    
+
+    <!-- link Swiper css + js -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <!-- link to js -->
+    <script src="main.js"></script>
 
     <script>
         const products = [
-            {
-                id: 1,
-                name: "Nike Air Force 1 Low",
-                image: "img/p1.png",
-                price: "$50.05",
-                description: "The Nike Air Force 1 Low is a timeless sneaker that blends style and comfort. Designed with high-quality materials and perfect for both casual wear and performance activities.",
-                stars: 4.5,
-                colors: ["red", "blue", "green", "yellow"]
-            },
-            {
-                id: 2,
-                name: "Nike Air Max 270",
-                image: "img/p2.png",
-                price: "$120.00",
-                description: "Experience the ultimate comfort with Nike Air Max 270.",
-                stars: 5,
-                colors: ["black", "white", "grey"]
-            },
-        ];
+                {
+                    id: 1,
+                    name: "MF backpack",
+                    image: "img/backpack1.png",
+                    price: "$50.05",
+                    description: "Who needs a backpack when you have pockets? Oh, wait, this one doesn't have any pockets.",
+                    stars: 4.5,
+                    colors: ["red", "blue", "green", "yellow"],
+                    sku: "BP001",
+                    brand: "Nike",
+                    material: "Leather",
+                    category: "Backpack",
+                    sizes: ["One Size"]
+                },
+                {
+                    id: 2,
+                    name: "Joola Pickleball Paddle Cover",
+                    image: "img/bao_vot1.png",
+                    price: "$20.99", // Adjust the price as needed
+                    description: "Protect your Joola pickleball paddle with this durable and stylish cover. Made from high-quality materials, it provides excellent protection against scratches, dirt, and moisture.",
+                    stars: 4.8, // Adjust the rating as needed
+                    colors: ["Black"],
+                    sku: "PP002",
+                    brand: "Joola",
+                    material: "Neoprene",
+                    category: "Pickleball Accessories",
+                    sizes: ["One Size"]
+                },
+                {
+                    id: 3,
+                    name: "NIUPIPO Pickleball Balls",
+                    image: "img/bong-thi-dau1.png",  // Đường dẫn tới ảnh tải lên của bạn
+                    price: "$15.99",
+                    description: "These NIUPIPO pickleball balls are designed for precision and durability, ideal for both indoor and outdoor play. Engineered with high-quality materials for perfect bounce and long-lasting play.",
+                    stars: 4.7,
+                    colors: ["green"],
+                    sku: "PKB001",
+                    brand: "NIUPIPO",
+                    material: "Plastic",
+                    category: "Sports Equipment",
+                    sizes: ["Standard"]
+                },
+                {
+                    id: 4,
+                    name: "ASICS Court Shoes",
+                    image: "img/giay1.png",  // Đường dẫn tới ảnh tải lên của bạn
+                    price: "$89.99",
+                    description: "ASICS Court Shoes are engineered for maximum performance on court surfaces, offering superior grip, comfort, and style. Perfect for athletes who demand both functionality and aesthetics.",
+                    stars: 4.8,
+                    colors: ["white", "green"],
+                    sku: "ASC001",
+                    brand: "ASICS",
+                    material: "Synthetic",
+                    category: "Footwear",
+                    sizes: ["7", "8", "9", "10", "11"]
+                },
+                {
+                    id: 5,
+                    name: "JOOLA Sports Bag",
+                    image: "img/tui1.png",  // Đường dẫn tới ảnh tải lên của bạn
+                    price: "$45.00",
+                    description: "JOOLA Sports Bag with vibrant design, perfect for carrying all your sports equipment. Spacious, durable, and designed with high-quality materials.",
+                    stars: 4.7,
+                    colors: ["pink", "black"],
+                    sku: "JOOLA002",
+                    brand: "JOOLA",
+                    material: "Polyester",
+                    category: "Bags",
+                    sizes: ["8", "9", "10", "11"]
+                },
+                {
+                    id: 6,
+                    name: "JOOLA Trinity Wristbands (2 Pack)",
+                    image: "img/quan-co-tay.png", // Assuming you have an image for the wristbands
+                    price: "$12.99", // Adjust the price as needed
+                    description: "Stay cool and comfortable during your pickleball games with the JOOLA Trinity Wristbands. These moisture-wicking wristbands help absorb sweat and keep your hands dry. The elastic design ensures a comfortable fit.",
+                    stars: 4.7, // Adjust the rating as needed
+                    colors: ["White"],
+                    sku: "WB003",
+                    brand: "Joola",
+                    material: "Polyester",
+                    category: "Pickleball Accessories",
+                    sizes: ["One size"]
+                },
+                {
+                    id: 7,
+                    name: "AMASPORT Nucleon Pro Pickleball Paddle (2 Pack)",
+                    image: "img/vot1.png", // Assuming you have an image for the paddles
+                    price: "$199.99", // Adjust the price as needed
+                    description: "Elevate your pickleball game with the AMASPORT Nucleon Pro Pickleball Paddle. Featuring a graphite surface for optimal control and power, this paddle is perfect for both beginners and experienced players. The ergonomic handle provides a comfortable grip, while the stylish design adds a touch of personality.",
+                    stars: 5, // Adjust the rating as needed
+                    colors: ["Blue", "Red"],
+                    sku: "PP004",
+                    brand: "AMASPORT",
+                    material: "Graphite",
+                    category: "Pickleball Paddles",
+                    sizes: ["no size"]
+                },
+                {
+                    id: 8,
+                    name: "Gamma 405 Pickleball Paddle",
+                    image: "img/vot2.png", // Assuming you have an image for the paddle
+                    price: "$79.99", // Adjust the price as needed
+                    description: "Experience exceptional power and control with the Gamma 405 Pickleball Paddle. Featuring a textured graphite surface and Sensa Core technology, this paddle delivers explosive power and precise shots. The extended grip length is perfect for two-handed backhands, while the comfortable handle ensures a secure grip.",
+                    stars: 4.9, // Adjust the rating as needed
+                    colors: ["Black/White"],
+                    sku: "PP005",
+                    brand: "Gamma",
+                    material: "Graphite",
+                    category: "Pickleball Paddles",
+                    sizes: ["no size"]
+                },
+                {
+                    id: 9,
+                    name: "JOCAROLA Pickleball Paddles (2 Pack)",
+                    image: "img/vot3.png", // Assuming you have an image for the paddles
+                    price: "$179.99", // Adjust the price as needed
+                    description: "Experience unmatched performance with the JOCAROLA Pickleball Paddles. These high-quality paddles feature a durable graphite face and a comfortable grip for optimal control and power. The stylish design and sleek finish make them a standout choice for any pickleball enthusiast.",
+                    stars: 4.8, // Adjust the rating as needed
+                    colors: ["Black"],
+                    sku: "PP006",
+                    brand: "JOCAROLA",
+                    material: "Graphite",
+                    category: "Pickleball Paddles",
+                    sizes: ["no size"]
+                },
+                {
+                    id: 10,
+                    name: "NikeCourt Air Zoom Vapor 11 Tennis Shoes",
+                    image: "img/giay3.png",
+                    price: "$139.99",
+                    description: "Experience ultimate performance on the court with the NikeCourt Air Zoom Vapor 11 Tennis Shoes. Featuring a lightweight design, responsive cushioning, and excellent traction, these shoes are built for speed and agility. The breathable mesh upper keeps your feet cool and comfortable throughout the game.",
+                    stars: 5,
+                    colors: ["black", "white", "grey"],
+                    sku: "AM270B009",
+                    brand: "Nike",
+                    material: "Mesh",
+                    category: "Shoes",
+                    sizes: ["8", "9", "10", "11"]
+                },
+                {
+                    id: 11,
+                    name: "Nike Air Max 270",
+                    image: "img/giay2.png",
+                    price: "$120.00",
+                    description: "Experience the ultimate comfort with Nike Air Max 270.",
+                    stars: 5,
+                    colors: ["black", "white", "grey"],
+                    sku: "AM270B010",
+                    brand: "Nike",
+                    material: "Mesh",
+                    category: "Shoes",
+                    sizes: ["8", "9", "10", "11"]
+                },
+                {
+                    id: 12,
+                    name: "Noizzas pickleball paddle",
+                    image: "img/vot6.png",
+                    price: "$120.00",
+                    description: "Experience the ultimate comfort with Nike Air Max 270.",
+                    stars: 5,
+                    colors: ["black", "white", "grey"],
+                    sku: "AM270B011",
+                    brand: "Noizzas",
+                    material: "Mesh",
+                    category: "Paddle",
+                    sizes: ["no size"]
+                },
+                {
+                    id: 13,
+                    name: "Joola Air Max Bag",
+                    image: "img/baovot2.png",
+                    price: "$20.99", // Adjust the price as needed
+                    description: "Protect your Joola pickleball paddle with this durable and stylish cover. Made from high-quality materials, it provides excellent protection against scratches, dirt, and moisture.",
+                    stars: 4.8, // Adjust the rating as needed
+                    colors: ["Black"],
+                    sku: "PP002",
+                    brand: "Joola",
+                    material: "Neoprene",
+                    category: "Pickleball Accessories",
+                    sizes: ["One Size"]
+                },
+                {
+                    id: 14,
+                    name: "Nike Air Max 270",
+                    image: "img/backpack2.png",
+                    price: "$50.05",
+                    description: "Who needs a backpack when you have pockets? Oh, wait, this one doesn't have any pockets.",
+                    stars: 4.5,
+                    colors: ["red", "blue", "green", "yellow"],
+                    sku: "BP001",
+                    brand: "Nike",
+                    material: "Leather",
+                    category: "Backpack",
+                    sizes: ["One Size"]
+                },
+            ];
+
 
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -325,11 +736,21 @@
                     </div>
                     <span class="price">${product.price}</span>
                     <p>${product.description}</p>
+                    <div class="additional-info">
+                        <p class="info-item"><strong>SKU:</strong> ${product.sku}</p>
+                        <p class="info-item"><strong>Brand:</strong> ${product.brand}</p>
+                        <p class="info-item"><strong>Material:</strong> ${product.material}</p>
+                        <p class="info-item"><strong>Category:</strong> ${product.category}</p>
+                        <p class="info-item"><strong>Size Options:</strong> ${product.sizes.join(', ')}</p>
+                    </div>
                     <div class="quantity">
                         <label for="quantity">Quantity:</label>
                         <input type="number" id="quantity" name="quantity" min="1" value="1">
                     </div>
+                    <div>
                     <button class="btn">Add to Cart</button>
+                    <button class="checkout-button" id="buy-now" >Buy Now</button>
+                    </div>
                 </div>
             `;
         } else {
@@ -337,19 +758,40 @@
         }
 
         function generateStars(rating) {
+            const fullStars = Math.floor(rating);
+            const halfStar = rating % 1 !== 0;
             let starsHtml = '';
-            for (let i = 1; i <= 5; i++) {
-                if (i <= Math.floor(rating)) {
-                    starsHtml += `<i class='bx bxs-star'></i>`;
-                } else if (i - rating < 1) {
-                    starsHtml += `<i class='bx bxs-star-half'></i>`;
-                } else {
-                    starsHtml += `<i class='bx bx-star'></i>`;
-                }
+
+            for (let i = 0; i < fullStars; i++) {
+                starsHtml += '<i class="bx bxs-star"></i>';
             }
+
+            if (halfStar) {
+                starsHtml += '<i class="bx bxs-star-half"></i>';
+            }
+
             return starsHtml;
         }
+        document.querySelector('.checkout-button').addEventListener('click', function() {
+        document.getElementById('orderPopup').style.display = 'flex';
+    });
+    
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Handle form submission here (e.g., validate or send data)
+        alert('Order placed successfully!');
+        document.getElementById('orderPopup').style.display = 'none';
+    });
+    
+    // Close popup if user clicks outside form
+    document.getElementById('orderPopup').addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.style.display = 'none';
+        }
+    });
     </script>
+    
+        
 </body>
 
 </html>

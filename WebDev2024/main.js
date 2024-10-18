@@ -160,7 +160,7 @@ var swiperReviews = new Swiper(".reviews-container", {
 });
 
 var popup = document.getElementById('popup');
-var closeBtn = document.getElementsByClassName("close-btn")[0];
+var closeBtn = document.getElementsByClassName("close-btn");
 const pagination = document.querySelector('.swiper-pagination.pagiarrival');
 const nextButton = document.querySelector('.swiper-button-next');
 const prevButton = document.querySelector('.swiper-button-prev');
@@ -168,13 +168,11 @@ const prevButton = document.querySelector('.swiper-button-prev');
 function showPopup(productImageSrc) {
     var productImage = document.getElementById('productImage');
     productImage.src = productImageSrc;
-    popup.style.display = 'block'; 
+    popup.style.display = 'flex'; 
     pagination.style.display = 'none';
     nextButton.style.display = 'none';
     prevButton.style.display = 'none';
-    setTimeout(() => {
-        popup.classList.add('active'); // add class active after 0ms to active effect
-      }, 10);
+
 }
 // Close popup when clicking the close button
 closeBtn.onclick = function() {
