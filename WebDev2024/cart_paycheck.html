@@ -14,6 +14,65 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
 </head>
+<style>
+    .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup Content */
+.popup-content-form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content-form h2 {
+    text-align: center;
+}
+
+.popup-content-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.popup-content-form input,
+.popup-content-form textarea,
+.popup-content-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#submitOrder {
+    width: 135px;
+  padding: 0.7rem 1.2rem;
+  background: var(--main-color);
+  color: var(--bg-color);
+  font-weight: 500;
+  display: inline-block;
+  text-transform: uppercase;
+  clip-path: polygon(100% 0,93% 50%,86% 99%,0% 100%,7% 47%,13% 0%);
+  text-align: center;
+}
+
+#submitOrder:hover {
+    background-color: var(--text-color);
+  letter-spacing: 2px;
+  transition: 0.2s;
+}
+</style>
 <body>
     <!-- Navbar -->
     <header>
@@ -210,7 +269,37 @@
         </div>
     </section>
     <!-- Copyright -->
-
+    <div id="orderPopup" class="popup">
+        <div class="popup-content-form">
+            <h2>Order Information</h2>
+            <form id="orderForm">
+                <label for="fullname">Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+    
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+    
+                <label for="phone">Phone number:</label>
+                <input type="tel" id="phone" name="phone" required>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="note">Note:</label>
+                <textarea id="note" name="note"></textarea>
+    
+                <label for="payment">Payment method:</label>
+                <select id="payment" name="payment" required>
+                    <option value="credit-card">Credit card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="cash">COD</option>
+                </select>
+    
+                <button type="submit" id="submitOrder">Send</button>
+            </form>
+        </div>
+    </div>
+    
     <div class="copyright">
         <li><a href="http://127.0.0.1:5501/WebDev2024/WebDev2024/index.html" target="_blank">&#169; 2024 USTHPICKLEBALL.VN - Created by Group 24</a></li>
     </div>
@@ -222,5 +311,23 @@
     
     <!-- link to js -->
     <script src="main.js"></script>
+    <script>
+        document.querySelector('.checkout-button').addEventListener('click', function() {
+        document.getElementById('orderPopup').style.display = 'flex';
+    });
+    
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Handle form submission here (e.g., validate or send data)
+        alert('Order placed successfully!');
+        document.getElementById('orderPopup').style.display = 'none';
+    });
+    
+    // Close popup if user clicks outside form
+    document.getElementById('orderPopup').addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.style.display = 'none';
+        }
+    });</script>
 </body>
 </html>
