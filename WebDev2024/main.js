@@ -143,6 +143,21 @@ signInLink.addEventListener("click", function() {
   loginPopup.style.display = "flex";
 });
 
+// Hàm để đóng tất cả các popup
+function closeAllPopups() {
+    loginPopup.style.display = 'none';
+    forgotPasswordPopup.style.display = 'none';
+    signupPopup.style.display = 'none';
+}
+
+// Xử lý sự kiện click trên toàn bộ cửa sổ
+window.onclick = function(event) {
+    // Kiểm tra nếu người dùng nhấp bên ngoài popup
+    if (event.target === loginPopup || event.target === forgotPasswordPopup || event.target === signupPopup) {
+        closeAllPopups(); // Gọi hàm để đóng tất cả popup
+    }
+};
+
 // Swiper for Reviews
 var swiperReviews = new Swiper(".reviews-container", {
     loop: true,
@@ -159,41 +174,7 @@ var swiperReviews = new Swiper(".reviews-container", {
     
 });
 
-var popup = document.getElementById('popup');
-var closeBtn = document.getElementsByClassName("close-btn");
-const pagination = document.querySelector('.swiper-pagination.pagiarrival');
-const nextButton = document.querySelector('.swiper-button-next');
-const prevButton = document.querySelector('.swiper-button-prev');
-// Function to show popup and pass product details
-function showPopup(productImageSrc) {
-    var productImage = document.getElementById('productImage');
-    productImage.src = productImageSrc;
-    popup.style.display = 'flex'; 
-    pagination.style.display = 'none';
-    nextButton.style.display = 'none';
-    prevButton.style.display = 'none';
 
-}
-// Close popup when clicking the close button
-closeBtn.onclick = function() {
-    closePopup();
-}
-
-window.onclick = (e) => {
-    if (e.target === loginPopup || e.target === forgotPasswordPopup || e.target === signupPopup||e.target == popup) {
-        closePopup();
-    }
-};
-
-function closePopup() {
-    popup.classList.remove('active'); // delete class active 
-        setTimeout(() => {
-           popup.style.display = 'none'; 
-           pagination.style.display = 'block';
-           nextButton.style.display = 'block';
-           prevButton.style.display = 'block';
-        }, 300);
-};
 
 
 
