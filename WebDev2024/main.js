@@ -120,15 +120,15 @@ const userIcon = document.querySelector('#user-icons');
 
 function togglePopup(popup, display, isActive) {
     if (isActive) {
-        popup.style.display = display; // Hiện popup
+        popup.style.display = display; 
         setTimeout(() => {
-            popup.classList.add('active'); // Thêm class active sau 10ms
+            popup.classList.add('active'); // add active after 10ms
         }, 10);
     } else {
         // exit popup
         popup.classList.add('exiting');
         setTimeout(() => {
-            popup.classList.remove('active'); // Xóa class active và exiting
+            popup.classList.remove('active', 'exiting'); // delete active and exiting class
             popup.style.display = 'none'; 
         }, 300); 
     }
